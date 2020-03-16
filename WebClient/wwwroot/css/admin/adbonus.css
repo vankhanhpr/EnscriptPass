@@ -1,0 +1,230 @@
+﻿@import url("adconfig.css");
+:root{
+
+}
+@media only screen and (min-width:0){
+    .body-form{
+        width:100%;
+        padding-left:5%;
+        padding-right:5%;
+    }
+    .t-title {
+       font-weight:600;
+       margin-top:3px;
+    }
+    .tab-title {
+        width: 100%;
+        background-color: var(--background-item);
+        padding-top: 5px;
+    }
+
+    .t-note-dangbo {
+        color: var(--cl-text-bl);
+        font-weight: 300;
+        text-align: left;
+    }
+
+    .select-option {
+        border: 1px solid rgba(51,51,51,0.1);
+        border-radius: 4px;
+        padding: 2px 7px;
+        cursor: pointer;
+    }
+    .bnt-add-new {
+        color: var(--cl-text-wt);
+        font-weight: 300;
+        text-align: left;
+        position: relative;
+        float: right;
+        background-color: var(--bg-button);
+        padding: 3px 5px;
+        border-radius: 4px;
+        border: 1px solid rgba(51,51,51,0.1);
+        cursor: pointer;
+    }
+    .select-option {
+        border: 1px solid rgba(51,51,51,0.1);
+        border-radius: 4px;
+        padding: 2px 7px;
+        cursor: pointer;
+    }
+    .main-body{
+        width:100%;
+    }
+    .tab-filte{
+        width:100%;
+    }
+    .t-form-day{
+        color:var(--cl-text-bl);
+        text-align:left;
+    }
+    .f-search-ft {
+        border-radius: 4px;
+        border: 1px solid rgba(51,51,51,0.1);
+        background-color: var(--xxx);
+    }
+    .search-ft {
+        width: auto;
+        border: none;
+    }
+    .row-item{
+        width:100%;
+        border:1px solid rgba(51,51,51,0.1);
+    }
+    .text-item {
+        color: var(--cl-text-bl);
+        text-align: center;
+        font-weight: 300;
+        border-right: 1px solid rgba(51,51,51,0.1);
+        overflow: auto;
+        padding:5px;
+    }
+    .row-item-main {
+        background-color: var(--color-head-table);
+    }
+    .small-item{
+        width:10%;
+    }
+    .item{
+        width:15%;
+    }
+
+    .big-item{
+        width:20%;
+    }
+    .ic-font{
+        color:var(--cl-text-bl);
+        font-size:18px;
+        border:1px solid rgba(51,51,51,0.1);
+        border-radius:4px;
+        padding:2px 4px;
+        margin-top:5px;
+        cursor:pointer;
+    }
+    .item-main {
+        font-weight: 600;
+    }
+    /*modal*/
+    .modal-body {
+        width: 100%;
+    }
+
+    .dl-sm-it {
+        width: 100%;
+    }
+
+    .dl-name-fml {
+        color: var(--cl-text-bl);
+        text-align: left;
+    }
+
+    .dl-input-fml {
+        color: var(--cl-text-bl);
+        text-align: left;
+        border: 1px solid rgba(51,51,51,0.1);
+        border-radius: 4px;
+    }
+
+    .dl-sl-fml {
+        color: var(--cl-text-bl);
+        text-align: left;
+        border: 1px solid rgba(51,51,51,0.1);
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 5px;
+    }
+    .dl-sl-it {
+        color: var(--cl-text-bl);
+        text-align: left;
+        border: 1px solid rgba(51,51,51,0.1);
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 5px;
+    }
+    .bnt-close-form {
+        float: right;
+        margin-top: 5px;
+    }
+
+    .dl-bnt-save {
+        color: var(--cl-text-bl);
+        border: 1px solid rgba(51,51,51,0.1);
+        float: right;
+        padding: 3px 5px;
+        border-radius: 4px;
+        background-color: var(--bg-button);
+        cursor: pointer;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+        width: auto;
+        padding: 6px 12px;
+        text-align: center;
+        font-weight: 600;
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+    .err-validate {
+        color: red;
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+        display: none;
+    }
+    .err-ip {
+        border: 1px solid rgba(255, 0, 0,0.4);
+    }
+    .t-nodata {
+        color: var(--cl-text-bl);
+        width: 100%;
+        font-size: var(--fs-dt);
+        text-align: center;
+        padding: 5px;
+        border: 1px solid rgba(51,51,51,0.1);
+        margin-bottom: 10px;
+    }
+}
+@media only screen and (min-width:1200px){
+    .t-title {
+        font-size: var(--fs-dt);
+        margin-bottom: 10px;
+    }
+    .t-note-dangbo {
+        margin-left: 30px;
+        margin-top: 4px;
+        margin-right: 3px;
+    }
+    .t-form-day {
+        font-size:var(--fs-dt);
+        margin-right:10px;
+        margin-top:3px;
+        margin-left:3px;
+    }
+    .form-datetime{
+        width:200px;
+    }
+    .tab-title{
+        margin-bottom:15px;
+    }
+    .f-search-ft {
+        padding: 5px;
+        margin-left: 20px;
+    }
+    .text-item {
+        font-size:var(--fs-dt);
+        height:40px;
+    }
+    /*modal*/
+    .dl-name-fml {
+        font-size: var(--fs-dt);
+        width: 30%;
+    }
+    .dl-sm-it {
+        margin-bottom: 20px;
+    }
+    .dl-input-fml {
+        width: 70%;
+        padding: 5px;
+    }
+    .dl-sl-fml {
+        width: 70%;
+    }
+}

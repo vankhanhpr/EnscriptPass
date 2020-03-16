@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "DonVi";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/admin/adorganization.css">
+}
+
+<div class="k main-form">
+    <div class="k body-form">
+        <div class=" k row-item" id="f-add-it-dv">
+            <div class="k row-table">
+                <span class="k t name-f">Quản lý đơn vị</span>
+                <div class="k f-search-ft">
+                    <input class="k search-ft" id="search-box" onkeyup="searchOriganization(bindingOrganization)" type="text">
+                    <i class="fa fa-search bnt-search" aria-hidden="true"></i>
+                </div>
+                <span class="add-new-dv" data-toggle="modal" data-target="#modaladddonvi">+ Thêm mới</span>
+            </div>
+            <div class="k row-table row-table-main">
+                <span class="k t tt-table">Đơn vị</span>
+                <span class="k t tt-table">Trạng thái</span>
+                <span class="k t tt-table">Cập nhật</span>
+            </div>
+            @*<div class="k row-table-it">
+                    <span class="k t tt-table-it">Phòng Giải pháp</span>
+                    <span class="k t tt-table-it">Hoạt động</span>
+                    <div class="k t tt-table-it">
+                        <i class="fa fa-cogs" data-toggle="modal" data-target="#modalupdatedonvi"></i>
+                    </div>
+                </div>*@
+
+        </div>
+    </div>
+
+    @*insert dang bo*@
+    <div class="modal fade" id="modaladddonvi" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Thêm mới Đơn vị</h4>
+                </div>
+                <div class="k modal-body">
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-dv">Tên đơn vị: </span>
+                        <input class="k dl-input-dv" id="t-name-og" type="text" />
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-dv">Trạng thái: </span>
+                        <select class="k dl-sl-dv">
+                            <option value="0">Hoạt động</option>
+                        </select>
+                    </div>
+                    @*<span class="k dv-bnt-save" onclick="insertOrganization()">Cập nhật</span>*@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="k btn btn-default" data-dismiss="modal">
+                        Đóng
+                    </button>
+                    <span class="k dl-bnt-save" onclick="insertOrganization()">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        Thêm mới
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*update dang bo*@
+    <div class="modal fade" id="modalupdatedonvi" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Cập nhật Đơn vị</h4>
+                </div>
+                <div class="k modal-body">
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-dv">Tên đơn vị: </span>
+                        <input class="k dl-input-dv" id="t-name-og-ud" type="text" />
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-dv">Trạng thái: </span>
+                        <select class="k dl-sl-dv" id="dv-sl-act-ud">
+                            <option value="0">Hoạt động</option>
+                            <option value="1">Khóa</option>
+                        </select>
+                    </div>
+                    @*<span class="k dv-bnt-save" id="bnt-ud" onclick="updateOrganization()">
+                        <i class="fa fa-refresh fa-spin" id="bnt-ud-og"></i>
+                        Cập nhật
+                    </span>*@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="k btn btn-default" data-dismiss="modal">
+                        Đóng
+                    </button>
+                    <span class="k dl-bnt-save" onclick="updateOrganization()">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        Cập nhật
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Script{
+    <script src="~/js/admin/adorganization.js"></script>
+}

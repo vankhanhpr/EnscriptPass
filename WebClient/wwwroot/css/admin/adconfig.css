@@ -1,0 +1,37 @@
+﻿:root {
+    --cl-text-bl: #333333;
+    --cl-text-wt: #FFFFFF;
+    --fs-tt: 18px;
+    --fs-dt: 14px;
+    --bg-main: white;
+    --bg-button: #80bb35;
+    --color-head-table: #fffce0;
+}
+
+@media only screen and (min-width:0){
+    html {
+        font-family: 'Montserrat', sans-serif;
+    }
+    .t {
+        font-family: 'Montserrat', sans-serif;
+    }
+    .k{
+        position:relative;
+        float:left;
+    }
+    .t{
+
+    }
+    .main-form{
+        width:100%;
+        
+    }
+    .bg{
+        background-size:contain;
+        background-position:center;
+        background-repeat:no-repeat;
+    }
+}
+@media only screen and (min-width:1200px){
+
+}

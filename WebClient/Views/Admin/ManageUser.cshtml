@@ -1,0 +1,216 @@
+﻿
+@{
+    ViewData["Title"] = "Quản lý Đảng viên";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/admin/admanageuser1.css">
+}
+<div class="k main-form">
+    <div class="k body-form">
+        <div class="k form-title">
+            <span class="k t title">Quản lý nghiệp vụ Đảng viên</span>
+            <span class=" k t label-bd">Đảng bộ:</span>
+            <select class="k t sl-chibo" id="sl-dangbo"></select>
+            <span class=" k t label-bd">Chi bộ:</span>
+            <select class="k  t sl-chibo" id="sl-chibo"></select>
+        </div>
+        <div class="k form-body">
+            <div class="k left-form">
+                <div class="k title-left-form">
+                    <span class="k t label-list-user">Danh sách Đảng viên</span>
+                    @*<div class="k f-search-ft">
+                        <input class="k search-ft" id="search-box" onkeyup="getUserBySearchBox(bindingUser)" type="text" />
+                        <i class="fa fa-search bnt-search" aria-hidden="true"></i>
+                    </div>*@
+                </div>
+                <div class="k body-left-form" id="form-list-user">
+                    <div class="k row-table row-item-main">
+                        <span class="k t item-row row-main first-row">STT</span>
+                        <span class="k t item-row row-main scd-row">Mã Đảng viên</span>
+                        <span class="k t item-row row-main thr-row">Họ & tên</span>
+                    </div>
+                    @*<div class="k row-table">
+                            <span class="k t item-row first-row">1</span>
+                            <span class="k t item-row scd-row">LH012345</span>
+                            <span class="k t item-row thr-row">Nguyễn Hoàng Thần</span>
+                        </div>*@
+                </div>
+            </div>
+            <div class="k right-form">
+                <div class="k title-right-form">
+                    @*<a name="chuyendang" class="k t tab-layout fist-right-it" onclick="nextTabLayout(this)">Chuyển Đảng</a>*@
+                    <a name="huyhieu"class="k t tab-layout fist-right-it" onclick="nextTabLayout(this)">Xét tặng Huy hiệu</a>
+                    <a name="dvdubi" class="k t tab-layout" onclick="nextTabLayout(this)">Đảng viên dự bị</a>
+                    <div class="k body-right-form">
+                        @*Xet tang huy hieu Dang*@
+                        <div class="k sign-adherer" style="display:block" id="form-armorial">
+                            <div class="k child-form-user">
+                                <div class="k t main-adherer" id="form-old-user">
+                                    <span class="k t name-user" id="name-sign"></span>
+                                    <span class="k t note-day" id="day">Ngày vào Đảng:</span>
+                                    <span class="k t note-day"id="time-come"></span>
+                                    @*<progress class="k t progress-bar" id="time-line" data-label="30năm" max="60" value="30"> 70% </progress>*@
+                                </div>
+                            </div>
+                        </div>
+
+                        @*quan ly dang vien du bi*@
+                        <div class="k sign-adherer" style="display:none" id="tab-user-dubi">
+                            @*<span class=" k t t-item-note">Danh sách Đảng viên dự bị</span>*@
+
+                            <div class="k form-user" >
+                                <div class="k list-user-move" id="list-user-dubi">
+                                    <span class="k t no-people">Chi bộ không có Đảng viên dự bị</span>
+
+                                    <div class=" k border-item" id="form-user-dubi">
+                                        <div class="k img-avt" id="img-avatar"></div>
+                                        <div class="k f-name-timeline">
+                                            <span class="k t t-if-dv">
+                                                <i class="fa fa-id-card-o font-ic" aria-hidden="true"></i>
+                                                <span id="ff-madv"></span>
+                                            </span>
+                                            <span class="k t t-if-dv">
+                                                <i class="fa fa-user-circle-o font-ic" aria-hidden="true"></i>
+                                                <span id="ff-nameuser"></span>
+                                            </span>
+                                            <span class="k t t-if-dv">
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                <span id="ff-day-togo"></span>
+                                            </span>
+                                        </div>
+                                        <div class="k f-body-user">
+                                            <div class="k item-body-user" id="progess-year">
+                                                <span class="k t text-note-body-user">Tiến trình</span>
+                                                @*<progress class="k t progress-bar" id="file" data-label="4tháng/12tháng" max="12" value="4"> </progress>*@
+                                            </div>
+                                        </div>
+                                        <div class="k item-body-user" >
+                                            <span class="k t text-note-body-user">Thủ tục chuyển thành Đảng viên chính thức</span>
+
+                                            <div id="timeline-wrap">
+                                                @*<div id="timeline"></div>
+                                                <div class="marker mfirst timeline-icon one">
+                                                    <i class="fa fa-check"></i>
+                                                </div>
+                                                <div class="marker m2 timeline-icon two" onclick="changeView()">
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                                <div class="marker m3 timeline-icon three" onclick="changeView()">
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                                <div class="marker m4 timeline-icon four" onclick="changeView()">
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                                <div class="marker mlast timeline-icon five" onclick="changeView()">
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                                <input id="upload-doc" class="hidden" style="display:none" type="file" accept="image/*" multiple="">*@
+
+                                            </div>
+                                            <div class="k tab-view-note">
+                                                <div class="k timeline-panel tl1">
+                                                    <p class="t text-timeline">Chứng nhận học lớp bồi dưỡng</p>
+                                                </div>
+                                                <div class="k timeline-panel tl1">
+                                                    <p class="t text-timeline">Bản tự kiểm điểm</p>
+                                                </div>
+                                                <div class="k timeline-panel tl1">
+                                                    <p class="t text-timeline">Nhận xét của người phân công giúp đỡ</p>
+                                                </div>
+                                                <div class="k timeline-panel tl1">
+                                                    <p class="t text-timeline">Nghị quyết chi bộ</p>
+                                                </div>
+                                                <div class="k timeline-panel tl1">
+                                                    <p class="t text-timeline">Nghị quyết kết nạp</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*add new dang vien*@
+    <div class="modal fade" id="modalinsertdangvien" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Đảng viên chuyến đến</h4>
+                </div>
+                <div class="k modal-body">
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-dv">Mã Đảng viên: </span>
+                        <input class="k dl-input-dv" id="ip-madv" type="text" maxlength="8" />
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-dv">Chức vụ Đảng: </span>
+                        <select class="k dl-sl-dv" id="sl-title">
+                            @*<option value="0">Ủy viên</option>
+                                <option value="0">Bí thư chi bộ</option>*@
+                        </select>
+                    </div>
+                    <div class="k dl-sm-it" id="go-on-business-old">
+                        <span class="k t dl-name-dv">Nơi sinh hoạt cũ: </span>
+                        <input class="k dl-input-dv" id="adress-on-bussiness" type="text" />
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-dv" id="sl-db-active">Ngày đến Chi bộ: </span>
+                        <div class="form-group">
+                            <div class='input-group date' id='datepicker-daytochibo'>
+                                <input type='text' class="form-control" id="day-to-go" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="k dl-sm-it" id="go-on-business-old">
+                        <span class="k t dl-name-dv">Giấy giới thiệu: </span>
+                        <span class="k document-togo" type="text">
+                            <span class="t name-referral">chưa có file</span>
+                            <span class="t brower-doc" onclick="getImage()">Brower</span>
+                            <input id="upload-referral" class="hidden" style="display:none" type="file" accept="image/*" multiple="">
+                        </span>
+                    </div>
+
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-dv">Mật khẩu: </span>
+                        <input class="k dl-input-dv" id="ip-pass" type="password" />
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-dv">Nhập lại mật khẩu: </span>
+                        <input class="k dl-input-dv" id="ip-cf-pass" type="password" />
+                        <span class="k t err-validate" id="err-validate">**Vui lòng kiểm tra lại thông tin</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="k btn btn-default" data-dismiss="modal">
+                        Đóng
+                    </button>
+                    <span class="k dl-bnt-save" onclick="validateForm()">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        Chuyển tới Chi bộ
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+@section Script{
+    <script src="~/js/admin/adnewmanageuser.js"></script>
+    @*<script src="~/js/admin/addangviendubi.js"></script>*@
+}

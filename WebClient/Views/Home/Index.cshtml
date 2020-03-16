@@ -1,0 +1,403 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/user/studyprocess.css">
+    <link rel="stylesheet" type="text/css" href="~/css/admin/adfile.css">
+}
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h1>Thông tin Đảng viên</h1>
+
+                                    <form id="user-data" class="needs-validation" enctype="multipart/form-data" novalidate>
+                                        <div class="form-group row">
+                                            <div class=" k img-avt-file" id="user-avatar">
+                                                <span class="brower-avt" onclick="getImage()">Brower</span>
+                                                <input id="multi-file" class="hidden" style="display:none" type="file" accept="image/*" multiple="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Mã Đảng
+                                                viên
+                                            </label>
+                                            <div class="col-sm-5">
+                                                <input autocomplete="off" type="text" onchange="OnchangeInput('user-madv'); return false;" class="form-control idadherent"
+                                                       disabled required value="" id="user-madv">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Họ tên khai sinh <i class="warning">*</i>
+                                            </label>
+                                            <div class="col-sm-5">
+                                                <input autocomplete="off" name="hotenkhaisinh" id="user-hotenkhaisinh" type="text"
+                                                       required class="form-control edit-field" disabled
+                                                       onchange="OnchangeInput('user-hotenkhaisinh'); return false;">
+                                            </div>
+                                            <label class="col-sm-2 col-form-label Identity Card">
+                                                Giới
+                                                tính
+                                            </label>
+                                            <div class="col-sm-2">
+                                                <select id="user-gioitinh" onchange="OnchangeInput('user-gioitinh'); return false;" name="gioitinh" disabled class="form-control edit-field">
+                                                    <option selected value="0">Nam</option>
+                                                    <option value="1">Nữ</option>
+                                                    <option value="2">Khác</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Họ tên đang dùng<i class="warning">*</i>
+                                            </label>
+                                            <div class="col-sm-5">
+                                                <input onchange="OnchangeInput('user-hotendangdung'); return false;" autocomplete="off" name="hotendangdung" id="user-hotendangdung" type="text"
+                                                       class="form-control edit-field" disabled required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label Identity Card">
+                                                Chứng
+                                                minh thư <i class="warning">*</i>
+                                            </label>
+                                            <div class="col-sm-3 ">
+                                                <input autocomplete="off" id="user-cmnd" class="form-control edit-field" onchange="OnchangeInput('user-cmnd'); return false;"
+                                                       name="cmnd" disabled maxlength="12" required>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">Ngày cấp <i class="warning">*</i></label>
+                                            <div class="col-sm-2">
+                                                <input onchange="OnchangeInput('user-daycmnd'); return false;" autocomplete="off" name="daycmnd" id="user-daycmnd"
+                                                       class="datetimepicker form-control edit-field" type="text" disabled
+                                                       required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label ">Nơi cấp</label>
+                                            <div class="col-sm-3">
+                                                <select id="user-noicap" onchange="OnchangeInput('user-noicap'); return false;" name="noicap" disabled class="form-control edit-field"></select>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">Ngày sinh <i class="warning">*</i></label>
+                                            <div class="col-sm-2">
+                                                <input onchange="OnchangeInput('user-ngaythangnamsinh'); return false; " autocomplete="off" name="ngaythangnamsinh" id="user-ngaythangnamsinh"
+                                                       class="datetimepicker form-control edit-field" disabled type="text"
+                                                       required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Quê quán <i class="warning">*</i></label>
+                                            <div class="col-sm-5">
+                                                <input autocomplete="off" name="quequan" id="user-quequan" onchange="OnchangeInput('user-quequan'); return false;" type="text" disabled class="form-control edit-field" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Hộ khẩu thường
+                                                trú <i class="warning">*</i>
+                                            </label>
+                                            <div class="col-sm-5">
+                                                <input autocomplete="off" name="hokhauthuongtru" id="user-hokhauthuongtru" onchange="OnchangeInput('user-hokhauthuongtru'); return false;" type="text" class="form-control edit-field" disabled required>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label ">
+                                                Số điện
+                                                thoại <i class="warning">*</i>
+                                            </label>
+                                            <div class="col-sm-2">
+                                                <input autocomplete="off" id="user-sdt" class="form-control edit-field" name="sdt" onchange="OnchangeInput('user-sdt'); return false;"
+                                                       maxlength="12" disabled required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Nơi ở hiện
+                                                nay <i class="warning">*</i>
+                                            </label>
+                                            <div class="col-sm-5">
+                                                <input autocomplete="off" name="noicutru" id="user-noicutru" onchange="OnchangeInput('user-noicutru'); return false;" type="text" class="form-control edit-field" disabled required>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label ">Email <i class="warning">*</i></label>
+                                            <div class="col-sm-3">
+                                                <input autocomplete="off" name="email" onchange="OnchangeInput('user-email'); return false;" id="user-email" class="form-control edit-field email-field" placeholder="abc@gmail.com" type="email"
+                                                       disabled required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Tỉnh/Thành phố</label>
+                                            <div class="col-sm-2">
+                                                <select id="user-matp" onchange="OnchangeInput('user-matp'); return false;" name="matp" disabled class="form-control edit-field"></select>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">Quận/Huyện</label>
+                                            <div class="col-sm-2">
+                                                <select id="user-maqh" onchange="OnchangeInput('user-maqh'); return false;" name="maqh" disabled class="form-control edit-field"></select>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">Phường</label>
+                                            <div class="col-sm-2">
+                                                <select onchange="OnchangeInput('user-xaid'); return false;" id="user-xaid" name="xaid" disabled class="form-control edit-field"></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label ">
+                                                Tôn
+                                                giáo
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <select id="user-tongiao" onchange="OnchangeInput('user-tongiao'); return false;" name="tongiao" class="form-control edit-field" disabled required>
+                                                    <option value="0">Không</option>
+                                                    <option value="1">Phật giáo</option>
+                                                    <option value="2">Công giáo</option>
+                                                    <option value="3">Cao đài</option>
+                                                    <option value="4">Hòa hảo</option>
+                                                    <option value="5">Tin lành</option>
+                                                    <option value="6">Hồi giáo</option>
+                                                    <option value="7">Ấn Độ giáo</option>
+                                                    <option value="8">Tôn giáo khác</option>
+                                                </select>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">Dân tộc</label>
+                                            <div class="col-sm-2">
+                                                <select onchange="OnchangeInput('user-dantoc'); return false;" name="dantoc" id="user-dantoc" disabled class="form-control edit-field"></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Ngày vào Đảng dự
+                                                bị <i class="warning">*</i>
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <input onchange="OnchangeInput('user-ngayvaodangdb'); return false;" autocomplete="off" name="ngayvaodangdb" id="user-ngayvaodangdb" disabled class="datetimepicker form-control edit-field"
+                                                       type="text" required>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">
+                                                Ngày vào Đảng chính
+                                                thức <i class="warning">*</i>
+                                            </label>
+                                            <div class="col-sm-2">
+                                                <input onchange="OnchangeInput('user-ngayvaodangct'); return false;" autocomplete="off" name="ngayvaodangct" id="user-ngayvaodangct" class="datetimepicker form-control edit-field"
+                                                       type="text" disabled required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Ngày vào Đoàn <i class="warning">*</i>
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <input onchange="OnchangeInput('user-ngayvaodoan'); return false;" autocomplete="off" name="ngayvaodoan" id="user-ngayvaodoan" class="datetimepicker form-control edit-field"
+                                                       type="text" disabled required>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">
+                                                Trình độ văn hóa
+                                            </label>
+                                            <div class="col-sm-2">
+                                                <select id="user-trinhdovanhoa" onchange="OnchangeInput('user-trinhdovanhoa'); return false;" name="trinhdovanhoa" disabled class="form-control edit-field">
+                                                    <option>12</option>
+                                                    <option>11</option>
+                                                    <option>10</option>
+                                                    <option>9</option>
+                                                    <option>8</option>
+                                                    <option>7</option>
+                                                    <option>6</option>
+                                                    <option>5</option>
+                                                    <option>4</option>
+                                                    <option>3</option>
+                                                    <option>2</option>
+                                                    <option>1</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Nghề
+                                                nghiệp <i class="warning">*</i>
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <input autocomplete="off" name="nghenghiep" id="user-nghenghiep" onchange="OnchangeInput('user-nghenghiep'); return false;" type="text" class="form-control edit-field" disabled required>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label ">Đơn vị <i class="warning">*</i></label>
+                                            <div class="col-sm-2">
+                                                <select name="donvi" onchange="OnchangeInput('user-donvi'); return false;" id="user-donvi" disabled class="form-control edit-field"></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Trình độ chuyên
+                                                môn <i class="warning">*</i>
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <input autocomplete="off" name="chuyenmon" id="user-chuyenmon" type="text" onchange="OnchangeInput('user-chuyenmon'); return false;" class="form-control edit-field" disabled required>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label ">
+                                                Số lý
+                                                lịch
+                                            </label>
+                                            <div class="col-sm-2">
+                                                <input onchange="OnchangeInput('user-solylich'); return false;" autocomplete="off" name="solylich" id="user-solylich" type="text" disabled class="form-control edit-field">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Tình trạng hôn
+                                                nhân
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <select id="user-honnhan" onchange="OnchangeInput('user-honnhan'); return false;" name="honnhan" disabled class="form-control edit-field">
+                                                    <option value="0">Độc thân</option>
+                                                    <option value="1">Có gia đình</option>
+                                                </select>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">
+                                                Tình trạng sức
+                                                khỏe <i class="warning">*</i>
+                                            </label>
+                                            <div class="col-sm-2">
+                                                <input autocomplete="off" name="suckhoe" id="user-suckhoe" type="text" onchange="OnchangeInput('user-suckhoe'); return false;" class="form-control edit-field" value="" disabled required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Bằng cấp
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <select id="user-bangcap" onchange="OnchangeInput('user-bangcap'); return false;" name="bangcap" class="form-control edit-field" disabled required>
+                                                    <option value="-1">Không có</option>
+                                                    <option value="0">Cử nhân/Kĩ sư</option>
+                                                    <option value="1">Thạc sĩ</option>
+                                                    <option value="2">Tiến sĩ</option>
+                                                    <option value="3"> > Tiến sĩ</option>
+
+                                                </select>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">
+                                                Lí luận chính trị
+                                            </label>
+                                            <div class="col-sm-2">
+                                                <select id="user-lyluanct" onchange="OnchangeInput('user-lyluanct'); return false;" name="lyluanct" class="form-control edit-field" disabled required>
+                                                    <option value="0">Sơ cấp</option>
+                                                    <option value="1">Trung cấp</option>
+                                                    <option value="2">Cao cấp</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-2">
+                                                <input autocomplete="off" name="fileid" id="user-fileid" type="hidden" class="form-control edit-field" value="" disabled required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-2">
+                                                <input autocomplete="off" name="usid" id="user-usid" type="hidden" class="form-control edit-field" value="" disabled required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Thẻ Đảng:</label>
+                                            <div class="col-sm-3">
+                                                <span type="text" class="k t left-form-card" id="">
+                                                    <span id="user-card"></span>
+                                                    <span class="k t brower-card" id="browercard" onclick="getCard()"><i class="ti-folder"></i></span>
+                                                </span>
+                                                <input id="user-uploadcard" class="hidden" style="display:none" type="file" accept="image/*, application/pdf" multiple="">
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">Quyết định kết nạp Đảng</label>
+                                            <div class="col-sm-3">
+                                                <span type="text" class="k t left-form-card" id="">
+                                                    <span id="user-decision"></span>
+                                                    <span class="k t brower-card" id="browerdecision" onclick="getDicision()"><i class="ti-folder"></i></span>
+                                                </span>
+                                                <input id="user-uploaddecision" class="hidden" style="display:none" type="file" accept="image/*, application/pdf" multiple="">
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="form-group row">
+                                        <button id="btn-save" onclick="validateAll(); return false;" class="col-sm-2 col-form-label btn ml-10 ">
+                                            <i class="ti-save"></i>
+                                        </button>
+                                        @*<button id="btn-edit" onclick="edit()" class="col-sm-2 col-form-label btn ml-10 ">
+                                                Sửa
+                                            </button>*@
+                                    </div>
+                                    <div class="k t tab-note-family">
+                                        <span class="k">Quá trình học tập</span>
+                                        <i class="fa fa-angle-down ic-show-ft" aria-hidden="true" onclick="tonggeTabStudyProcess(this)"></i>
+                                    </div>
+                                    <div class="k tab-family" id="user-studyprocess">
+                                        <div class="k row-table">
+                                            <span class="k t text process-stt bold">STT</span>
+                                            <span class="k t text process-soso bold">Từ</span>
+                                            <span class="k t text process-soso bold">Đến</span>
+                                            <span class="k t text process-soso bold">Học gì</span>
+                                            <div class="k t text process-soso bold">Ở đâu</div>
+                                            <div class="k t text tt-small-process bold">Loại bằng</div>
+                                            <div class="k t text tt-small-process bold">Xếp loại</div>
+                                            <div class="k t text tt-small-process bold">Loại hình</div>
+                                            <span class="k t text process-stt bold">
+                                                Lưu
+                                                <i class="fa fa-plus-circle ic-add-view" aria-hidden="true" onclick="addView()"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                        @*working process*@
+                                        <div class="k t tab-note-family">
+                                            <span class="k">Quá trình công tác</span>
+                                            <i class="fa fa-angle-down ic-show-ft" aria-hidden="true" onclick="tonggeTabWorkingProcess(this)"></i>
+                                        </div>
+                                        <div class="k tab-family" id="user-workingprocess">
+                                            <div class="k row-table">
+                                                <span class="k t text process-stt bold">STT</span>
+                                                <span class="k t text process-soso bold">Từ</span>
+                                                <span class="k t text process-soso bold">Đến</span>
+                                                <span class="k t text process-soso bold">Làm gì</span>
+                                                <div class="k t text process-soso bold">Ở đâu</div>
+                                                <div class="k t text tt-small-process bold">Chức vụ</div>
+                                                <div class="k t text tt-big-process bold">Cơ quan</div>
+                                                <span class="k t text process-stt bold">
+                                                    Lưu
+                                                    <i class="fa fa-plus-circle ic-add-view" aria-hidden="true" onclick="addViewWorking()"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                       
+
+                                   
+
+                                    <!-- Basic Form Inputs card end -->
+                                    <!-- Input Grid card start -->
+                                    <!-- Page body end -->
+                                </div>
+                            </div>
+                            <!-- Main-body end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Script{
+    <script src="~/js/user/user.js"></script>
+    <script src="~/js/user/studyprocess.js"></script>
+    <script src="~/js/user/workingprocess.js"></script>
+    <script>
+        @*showLoading();
+        try {
+            var id = @ViewBag.usid;
+            getInfoUser(id, bindingUserFile);
+        }
+        catch (er) {
+            destroyLoading();
+            alert(er);
+        }*@
+    </script>
+}

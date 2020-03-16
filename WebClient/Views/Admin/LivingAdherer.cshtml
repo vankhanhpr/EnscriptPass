@@ -1,0 +1,162 @@
+﻿
+@{
+    ViewData["Title"] = "LivingAdherer";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/admin/adlivingadherer.css">
+}
+<div class=" k main-form">
+    <div class="k body-form">
+        <div class="k tab-title">
+            <span class="k t t-title">Quản lý sinh hoạt Đảng</span>
+            <span class="k t t-note-dangbo">Đảng bộ:</span>
+            <select class="k t select-option" id="sl-dangbo"></select>
+            <span class="k t t-note-dangbo">Chi bộ:</span>
+            <select class="k t select-option" id="sl-chibo">
+                @*<option value="1">Viễn thông TP.HCM</option>*@
+            </select>
+
+            <span class="t bnt-add-new" onclick="showFormAddNew()" data-toggle="modal" data-target="#modal-add-living">+Thêm mới</span>
+        </div>
+        <div class=" k body-item" id="body-item">
+            <div class="k row-table row-item-main">
+                <span class="k t tt-table small-row">STT</span>
+                <span class="k t tt-table small-row">Thời gian</span>
+                <span class="k t tt-table big-row">Nội dung sinh hoạt</span>
+                <span class="k t tt-table">File nghị quyết</span>
+                <span class="k t tt-table">Cập nhật</span>
+            </div>
+            <span class="k t t-nodata" id="tab-nodata">KHÔNG CÓ DỮ LIỆU</span>
+            @*<div class="k row-table item-form-detail">
+            <span class="k t tt-table-dt small-row">1</span>
+            <span class="k t tt-table-dt small-row">2</span>
+            <span class="k t tt-table-dt big-row">bieu mau 1</span>
+            <a href="https://10.70.105.15:8002/files/o34we2kpnq.docx">
+                <span class="k t tt-table-dt">o34we2kpnq.docx</span>
+            </a>
+            <div class="k t tt-table-dt">
+                <i class="fa fa-cogs" data-toggle="modal" data-target="#modalupdateform" onclick="getFormById(2)"></i>
+                <i class="fa fa-trash-o" aria-hidden="true" onclick="deleteForm(2)"></i>
+            </div>
+        </div>*@
+        </div>
+    </div>
+
+    @*add new living adherer*@
+    <div class="modal fade" id="modal-add-living" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Thêm sinh hoạt</h4>
+                </div>
+                <div class="k modal-body">
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-fml">Tiêu đề: </span>
+                        <input class="k dl-input-fml" id="title" type="text" />
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-fml">Thời gian: </span>
+                        <div class="form-group">
+                            <div class='input-group date' id='datepicker-add-new'>
+                                <input type='text' class="form-control" id="time-living" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-fml">Ghi chú: </span>
+                        <textarea class="k dl-input-fml note-bonus" id="note" type="text"></textarea>
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-fml">Nghị quyết: </span>
+                        <span class="k file-attach" type="text">
+                            <span id="name-file"></span>
+                            <span class="brower" onclick="getImage()">Brower</span>
+                            <input id="select-file-insert" class="hidden" style="display:none" type="file" multiple="">
+                        </span>
+                    </div>
+
+                    <span class="k t err-validate" id="err-validate">**Vui lòng điền đầy đủ thông tin</span>
+                    @*<span class="k bnt-save-add-new" onclick="validateAdhererLiving()">Lưu thông tin</span>*@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="k btn btn-default bnt-close-form" data-dismiss="modal">
+                        Đóng
+                    </button>
+                    <span class="k dl-bnt-save" onclick="validateAdhererLiving()">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        Lưu thông tin
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @*update living adherer*@
+    <div class="modal fade" id="modal-update-living" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Cập nhật thông tin</h4>
+                </div>
+                <div class="k modal-body">
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-fml">Tiêu đề: </span>
+                        <input class="k dl-input-fml" id="title-living" type="text" />
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-fml">Thời gian: </span>
+                        <div class="form-group">
+                            <div class='input-group date' id='datetime-update'>
+                                <input type='text' class="form-control" id="time-update" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-fml">Ghi chú: </span>
+                        <textarea class="k dl-input-fml note-bonus" id="note-update" type="text"></textarea>
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-fml">Đính kèm: </span>
+                        <span class="k file-attach" type="text">
+                            <span id="name-file-update"></span>
+                            <span class="brower" onclick="getImageUpdate()">Brower</span>
+                        </span>
+                        <input id="select-file-update" class="hidden" style="display:none" type="file" multiple="">
+                    </div>
+
+                    <span class="k t err-validate" id="err-update-discipline">**Vui lòng điền đầy đủ thông tin</span>
+                    @*<span class="k bnt-save-add-new" onclick="validateFormUpdate()">Cập nhật thông tin</span>*@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="k btn btn-default bnt-close-form" data-dismiss="modal">
+                        Đóng
+                    </button>
+                    <span class="k dl-bnt-save" onclick="validateFormUpdate()">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        Cập nhật thông tin
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+@section Script{
+    <script src="~/js/admin/adliving.js"></script>
+}
+

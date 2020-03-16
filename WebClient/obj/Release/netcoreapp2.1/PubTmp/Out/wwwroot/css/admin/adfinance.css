@@ -1,0 +1,210 @@
+﻿@import url("adconfig.css");
+
+:root{
+    --bg-item:white;
+}
+@media only screen and (min-width:0){
+    .body-form{
+        width:100%;
+        padding-left:5%;
+        padding-right:5%;
+        background-color:var(--bg-main);
+    }
+    .title-finance {
+        color: var(--cl-text-bl);
+        width: 100%;
+        padding: 5px 2px;
+        background: var(--bg-item);
+        font-weight:600;
+    }
+    .table-finance{
+        width:100%;
+    }
+    .item-table{
+        border:1px solid rgba(51,51,51,0.1);
+        background-color:var(--bg-item);
+    }
+    .main-row{
+        width:100%;
+        text-align:center;
+        font-weight:600;
+    }
+    .title-item-row{
+        width:100%;
+        border-top:1px solid rgba(51,51,51,0.1);
+    }
+    .detail-row{
+        width:33.333%;
+        color:var(--cl-text-bl);
+        text-align:center;
+        border:0.5px solid rgba(51,51,51,0.05);
+    }
+    .fa-trash-o {
+        position: relative;
+        float: right;
+        color: var(--cl-text-bl);
+        text-align: right;
+        margin-right: 5px;
+        border: 0.5px solid rgba(51,51,51,0.1);
+        border-radius:4px;
+        cursor:pointer;
+    }
+    .bnt-add-finance{
+        position:relative;
+        float:right;
+        margin-right:5px;
+        color:var(--cl-text-wt);
+        background-color:var(--bg-button);
+        border:1px solid rgba(51,51,51,0.1);
+        border-radius:4px;
+        cursor:pointer;
+    }
+
+    /*insert*/
+    .modal-body{
+        width:100%;
+    }
+    .dl-sm-it{
+        width:100%;
+    }
+    .dl-name-finance {
+        color: var(--cl-text-bl);
+        text-align: left;
+        font-weight: 300;
+        width: 30%;
+    }
+    .dl-input-finance {
+        border: 1px solid rgba(51,51,51,0.1);
+        border-radius: 4px;
+        color: var(--cl-text-bl);
+        text-align: left;
+        font-weight: 300;
+        width: 70%;
+        padding:5px;
+        cursor:pointer;
+    }
+    .dl-input-finance option{
+        color:var(--cl-text-bl);
+    }
+    .dl-bnt-save {
+        color: var(--cl-text-wt);
+        width: 100%;
+        text-align: center;
+        background-color: var(--bg-button);
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .err-validate {
+        color: red;
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+        display: none;
+    }
+    .err-ip {
+        border: 1px solid rgba(255, 0, 0,0.4);
+    }
+
+    /*view chart*/
+    .text-chart-revanue{
+        color:var(--cl-text-bl);
+        font-weight:300;
+        text-align:left;
+        background-color:var(--bg-item);
+        width:100%;
+    }
+    .total-money{
+        color:red;
+        padding:5px;
+        font-size:20px;
+    }
+    .select-option {
+        border: 1px solid rgba(51,51,51,0.1);
+        border-radius: 4px;
+        padding: 2px 7px;
+        cursor: pointer;
+    }
+    .dl-bnt-save {
+        color: var(--cl-text-bl);
+        border: 1px solid rgba(51,51,51,0.1);
+        float: right;
+        padding: 3px 5px;
+        border-radius: 4px;
+        background-color: var(--bg-button);
+        cursor: pointer;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+        width: auto;
+        padding: 6px 12px;
+        text-align: center;
+        font-weight: 600;
+        margin-right: 5px;
+    }
+    .bnt-close {
+        float: right;
+        margin-top: 5px;
+    }
+}
+@media only screen and (min-width:1200px){
+    .title-finance {
+        font-size: var(--fs-dt);
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .item-table {
+        width:50%;
+        padding:5px 5px 0 5px;
+    }
+    .detail-row {
+        padding:5px;
+        min-height:50px;
+    }
+    .fa-trash-o {
+        font-size: var(--fs-dt);
+        padding:3px 4px;
+    }
+    .bnt-add-finance {
+        padding:3px 5px;
+        font-size:var(--fs-dt);
+    }
+    .dl-sm-it {
+        margin-top:10px;
+    }
+    .dl-name-finance {
+        font-size:var(--fs-dt);
+    }
+    .dl-input-finance {
+        font-size: var(--fs-dt);
+    }
+    .dl-bnt-save {
+        padding: 5px;
+        font-size: var(--fs-dt);
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    /*view chart*/
+    .text-chart-revanue {
+        font-size:var(--fs-dt);
+        margin-top:20px;
+        margin-bottom:10px;
+        padding:5px;
+    }
+    .t-note-dangbo {
+        margin-left: 30px;
+        margin-top: 4px;
+        margin-right: 3px;
+    }
+    .t-note-dangbo {
+        color: var(--cl-text-bl);
+        font-weight: 300;
+        text-align: left;
+    }
+    .t-title-finance{
+        margin-top:4px;
+    }
+    .dl-bnt-save {
+        padding: 5px;
+        font-size: var(--fs-dt);
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+}

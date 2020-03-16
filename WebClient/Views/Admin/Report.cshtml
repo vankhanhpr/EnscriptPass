@@ -1,0 +1,188 @@
+﻿@{
+    ViewData["Title"] = "Report";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/admin/adreport.css">
+}
+<div class="k main-form">
+    <div class="k body-form">
+        <span class="k t text-report">Báo cáo và thống kê</span>
+
+        <div class="k form-filter">
+            <div class="k border-form-input">
+                <div class="k smail-item">
+                    <span class="k t text-note-filter">Từ ngày: </span>
+                    <div class="form-group">
+                        <div class='input-group date' id='datepicker-startday'>
+                            <input type='text' class="form-control" id="fromday" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="k smail-item">
+                    <span class="k t text-note-filter">đến: </span>
+                    <div class="form-group">
+                        <div class='input-group date' id='datepicker-endday'>
+                            <input type='text' class="form-control" id="endday" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="k smail-item">
+                    <select class="type-user" id="select-dangbo"></select>
+                </div>
+                <div class="k smail-item">
+                    <select class="type-user" id="select-chibo"></select>
+                </div>
+            </div>
+
+            <div class="k border-form-input form-input-sec">
+                <div class="k smail-item">
+                    <span class="k t text-note-filter">Theo giới tính: </span>
+                    <select class="k t select-filter" id="sl-gender">
+                        <option value="-1" selected="selected">Chọn tất cả</option>
+                        <option value="0">Nam</option>
+                        <option value="1">Nữ</option>
+                    </select>
+                </div>
+                <div class="k smail-item">
+                    <span class="k t text-note-filter">Theo tôn giáo: </span>
+                    <select class="k t select-filter" id="sl-tongiao">
+                        <option value="-1" selected="selected">Tất cả tôn giáo</option>
+                        <option value="0" selected>Không</option>
+                        <option value="1">Phật giáo</option>
+                        <option value="2">Công giáo</option>
+                        <option value="3">Cao đài</option>
+                        <option value="4">Hòa hảo</option>
+                        <option value="5">Tin lành</option>
+                        <option value="6">Hồi giáo</option>
+                        <option value="7">Ấn Độ giáo</option>
+                        <option value="8">Tôn giáo khác</option>
+                    </select>
+                </div>
+                <div class="k smail-item">
+                    <span class="k t text-note-filter">Theo trình độ CT: </span>
+                    <select class="k t select-filter" id="sl-lyluanct">
+                        <option value="-1" selected="selected">Chọn tất cả</option>
+                        <option value="0"> Sơ cấp </option>
+                        <option value="1"> Trung cấp </option>
+                        <option value="2"> Cao cấp </option>
+                    </select>
+                </div>
+                <div class="k smail-item">
+                    <span class="k t text-note-filter">Theo chuyên môn: </span>
+                    <select class="k t select-filter" id="sl-bangcap">
+                        <option value="-1" selected="selected">Tất cả cấp bậc</option>
+                        <option value="0"> Không có </option>
+                        <option value="1"> Cử nhân/Kĩ sư </option>
+                        <option value="2"> Thạc sĩ </option>
+                        <option value="3"> Tiến sĩ </option>
+                        <option value="4"> >Tiến sĩ </option>
+                    </select>
+                </div>
+                <div class="k smail-item">
+                    <span class="k t text-note-filter">Chức vụ Đảng: </span>
+                    <select class="k t select-filter" id="sl-title">
+                        <option value="-1" selected="selected">Tất cả Chức vụ</option>
+                    </select>
+                </div>
+                <div class="k smail-item">
+                    <span class="k t text-note-filter">Theo PB: </span>
+                    <select class="k t select-filter" id="sl-org">
+                        <option value="-1" selected="selected">Tất cả PB</option>
+                    </select>
+                </div>
+
+                <div class="k smail-item-button">
+                    <span class="k t main-filter bnt-filter " onclick="filterUser()">
+                        Lọc
+                        <i class="fa fa-filter" aria-hidden="true"></i>
+                    </span>
+                    <span class="k t bnt-filter" onclick="showBonus(bindingBonus)">DS khen thưởng</span>
+                    <span class="t bnt-filter" onclick="getUserDes(bindingUserDes)">DS kỉ luật</span>
+                    <span class="t bnt-filter" onclick="getUserToaBroad(bindingUserToabroad)">DS đi nước ngoài</span>
+                </div>
+                <div class="k max-row">
+                    <div class="k smail-item">
+                        <span class="k t text-note-filter">Chuyển Đảng: </span>
+                        <select class="k t select-filter" id="sl-chuyendang">
+                            <option value="-1" selected="selected">Đang ở Chi bộ</option>
+                            <option value="0">Chuyển đến</option>
+                            <option value="1">Chuyển đi</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*danh sách filter theo trường*@
+        <div class="k form-show-info-user" id="form-show-info-user" style="display:block">
+            <span class="k t text-note-list-item">Danh sách Đảng viên lọc theo trường</span>
+            <div class="k form-item-user-main">
+                <div class="k t left-text bold-text note-img-avt">Ảnh đại diện</div>
+                <div class="k t left-text bold-text">Mã Đảng viên</div>
+                <div class="k t left-text bold-text">Tên Đảng viên</div>
+                <div class="k t left-text bold-text">Ngày tạo tài khoản</div>
+                <div class="k t left-text bold-text">Ngày đến Chi Bộ</div>
+            </div>
+        </div>
+        @*danh sách dảng viên khen thưởng*@
+        <div class="k form-show-info-user" id="tab-user-bonus" style="display:none">
+            <span class="k t text-note-list-item">Danh sách Đảng viên được khen thưởng</span>
+            <div class="k form-item-user-main">
+                <div class="k t left-text bold-text note-img-avt">Ảnh đại diện</div>
+                <div class="k t left-text bold-text">Mã Đảng viên</div>
+                <div class="k t left-text bold-text">Tên Đảng viên</div>
+                <div class="k t left-text bold-text">Nội dung khen thưởng</div>
+                <div class="k t left-text bold-text">Ngày được khen thưởng</div>
+            </div>
+            @*<div class="k form-item-user">
+                <div class="k left-text img-avt-user"style=" background-image:url(/images/admin/avt-us-defaul.png)"></div>
+                <div class="k t left-text">LH0123232</div>
+                <div class="k t left-text">Nguyen Van A</div>
+                <div class="k t left-text">Khen tặng chiến sĩ thi đua hàng năm</div>
+                <div class="k t left-text">12/12/2012</div>
+            </div>*@
+        </div>
+        @*danh sách đảng viên bị kỉ luật*@
+        <div class="k form-show-info-user" id="tab-user-des" style="display:none">
+            <span class="k t text-note-list-item">Danh sách Đảng viên kỉ luật</span>
+            <div class="k form-item-user-main">
+                <div class="k t left-text bold-text note-img-avt">Ảnh đại diện</div>
+                <div class="k t left-text bold-text">Mã Đảng viên</div>
+                <div class="k t left-text bold-text">Tên Đảng viên</div>
+                <div class="k t left-text bold-text">Nội dung kỉ luật</div>
+                <div class="k t left-text bold-text">Ngày bị kỉ luật</div>
+            </div>
+            @*<div class="k form-item-user">
+                <div class="k left-text img-avt-user" style=" background-image:url(/images/admin/avt-us-defaul.png)"></div>
+                <div class="k t left-text">LH0123232</div>
+                <div class="k t left-text">Nguyen Van A</div>
+                <div class="k t left-text">Khen tặng chiến sĩ thi đua hàng năm</div>
+                <div class="k t left-text">12/12/2012</div>
+            </div>*@
+        </div>
+        @*Đảng viên đi nước ngoài theo trường*@
+        <div class="k form-show-info-user" id="tab-user-toabroad" style="display:none">
+            <span class="k t text-note-list-item">Danh sách Đảng viên đi nước ngoài</span>
+            <div class="k form-item-user-main">
+                <div class="k t left-text bold-text note-img-avt">Ảnh đại diện</div>
+                <div class="k t left-text bold-text">Mã Đảng viên</div>
+                <div class="k t left-text bold-text">Tên Đảng viên</div>
+                <div class="k t left-text bold-text">Lý do đi</div>
+                <div class="k t left-text bold-text">Ngày đi nước ngoài</div>
+            </div>
+        </div>
+        <span class="k t t-nodata" id="tab-nodata">KHÔNG CÓ DỮ LIỆU</span>
+        @*<div id="container" class="k linechart"></div>*@
+    </div>
+</div>
+@section Script {
+    <script type="text/javascript" src="~/lib/chart/highcharts.js"></script>
+    <script src="~/js/admin/adreport.js"></script>
+}

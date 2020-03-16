@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewData["Title"] = "Form";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/admin/adform.css">
+}
+    <div class=" k body-form">
+        <div class="k form-head">
+            <span class="k t title">Quản lý biểu mẫu</span>
+            <span class="k t t-note-dangbo">Đảng bộ:</span>
+            <select class="k t select-option" id="sl-dangbo">
+            </select>
+            <span class="k t t-note-dangbo">Chi bộ:</span>
+            <select class="k t select-option"id="sl-chibo">
+                @*<option value="">Trung tâm CNTT</option>*@
+            </select>
+        </div>
+        <div class="k form-add-new">
+            <div class="k item-left-form">
+                <span class="k left-text">Tên biểu mẫu:</span>
+                <input class="k right-text" id="nameform" />
+            </div>
+            <div class="k item-left-form">
+                <span class="k left-text">File:</span>
+                <div class="k form-add-file">
+                    <div class=" k img-brower" onclick="getImage()"></div>
+                    <input id="multi-file" class="hidden" accept=".docx,.xlsx,application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf, image/*" style="display:none" type="file" multiple="">
+                    <span class="k t name-file" id="name-file">Nothing</span>
+                </div>
+            </div>
+            <div class="k item-left-form">
+                <span class="k left-text">Ghi chú:</span>
+                <textarea class="k right-text" id="noteform"></textarea>
+            </div>
+            <div class=" k boder-err">
+                <span class="t err-validate" id="err-insert-form">**Vui lòng điền đầy đủ thông tin</span>
+                <span class="k t bnt-insert-form" onclick="validateForm()">Thêm biểu mẫu</span>
+            </div>
+
+            <span class="k t type-of-form">Loại: </span>
+            <select class="k filter-by" id="filter-by">
+                <option value="0">Biểu mẫu</option>
+                <option value="1">Văn bản đến</option>
+                <option value="2">Văn bản đi</option>
+            </select>
+            <div class="k f-search-ft">
+                <input class="k search-ft" id="search-box" onkeyup="searchForms(bindigForm)" type="text">
+                <i class="fa fa-search bnt-search" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class=" k main-form-item" id="main-form-item">
+            <div class="k row-table row-table-main">
+                <span class="k t tt-table small-row">STT</span>
+                <span class="k t tt-table small-row">Mã số văn bản</span>
+                <span class="k t tt-table big-row">Tên biểu mẫu</span>
+                <span class="k t tt-table">Link</span>
+                <span class="k t tt-table">Cập nhật</span>
+            </div>
+
+            @*<div class="k row-table">
+                <span class="k t tt-table-dt">1</span>
+                <span class="k t tt-table-dt">Báo cáo kỉ luật</span>
+                <span class="k t tt-table-dt">Hoạt động</span>
+                <div class="k t tt-table-dt">
+                    <i class="fa fa-cogs" data-toggle="modal" data-target="#modalupdatechibo"></i>
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </div>
+            </div>*@
+
+        </div>
+
+        @*update form*@
+        <div class="modal fade" id="modalupdateform" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Cập nhật biểu mẫu</h4>
+                    </div>
+                    <div class="k modal-body">
+                        <div class="k dl-sm-it">
+                            <span class="k t left-text">Tên biểu mẫu: </span>
+                            <input class="k input-text" id="name-form-update" type="text" />
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t left-text">File biểu mẫu: </span>
+                            <div class="k form-file-update" type="text">
+                                <span class="k t name-file-update" id="name-file-update">abcde.png</span>
+                                <span class="k t bnt-brower-update" onclick="getImageUpdate()">brower</span>
+                                <input id="multi-file-update" class="hidden" accept=".docx,.xlsx,application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf, image/*" style="display:none" type="file" multiple="">
+                            </div>
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t left-text">Ghi chú: </span>
+                            <textarea class="k input-text" id="name-note-update" type="text"></textarea>
+                        </div>
+                        <span class="k t err-validate-update"id="err-update-form">**Vui lòng kiểm tra lại thông tin</span>
+                        <span class="k bnt-update" id="bnt-update" onclick="validateUpdateForm()">
+                            @*<i class="fa fa-refresh fa-spin" id="bnt-ud-og"></i>*@
+                            Cập nhật
+                        </span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@section Script{
+    <script src="~/js/admin/adform.js"></script>
+}

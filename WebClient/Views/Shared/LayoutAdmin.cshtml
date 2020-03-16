@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/fonts/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="~/fonts/fonts-roboto.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/jquery/dist/notify-metro.css">
+    <link rel="stylesheet" type="text/css" href="~/css/admin/ad_layout.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/dropdown/fstdropdown.css">
+    @RenderSection("Css", required: false)
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <div class="k hd-main">
+                <div class="k bg hd-avt"></div>
+                <div class="k h-f-tt">
+                    <span class="k h-t-page-ad">TRANG QUẢN LÝ</span>
+                    <span class="k h-t-namepage">CHI BỘ TRUNG TÂM CÔNG NGHỆ THÔNG TIN</span>
+                </div>
+                <div class="hd-fomr-logout">
+                    <span class="k t hd-text-admin">Xin chào admin</span>
+                    <i class="fa fa-user-circle hd-ic-admin" aria-hidden="true"></i>
+                    <div class="t hd-bnt-logout" onclick="signout()">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        Đăng xuất
+                    </div>
+                </div>
+            </div>
+            @*<div class="k hd-top">
+                    <a class="k" href="/admin"><i class="fa fa-home hd-ic-home" aria-hidden="true"></i></a>
+                    <marquee class="t hd-text-run" scrolldelay="1" scrollamount="6" direction="left" behavior="scroll" onmouseout="start()" onmouseover="stop()">
+                        Đảng bộ Viễn thông Tp.HCM được thành lập tháng 3/2015 với hơn với 1.400 đảng viên ở 25 cơ sở Đảng trực thuộc, trong đó có 17 cơ sở Đảng trực thuộc VNPT Tp.HCM, 8 cơ sở Đảng còn lại nằm trong các đơn vị sự nghiệp, công ty CP.
+                        Giai đoạn 2010-2015, VNPT Tp.HCM đã đạt được kết quả SXKD tích cực: tăng trưởng doanh thu VT-CNTT chưa tính thẻ nạp bình quân hàng năm trên 8%.
+                    </marquee>
+                    <div class="hd-fomr-logout">
+                        <span class="k t hd-text-admin">Xin chào admin</span>
+                        <i class="fa fa-user-circle hd-ic-admin" aria-hidden="true"></i>
+                        <div class="t hd-bnt-logout" onclick="signout()">
+                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            Đăng xuất
+                        </div>
+                    </div>
+                </div>*@
+        </div>
+        <div class="k hd-boby">
+            <div class="k hd-left-body">
+                <a href="/admin">
+                    <span class="k t hd-text-menu-main">
+                        TRANG CHỦ
+                    </span>
+                </a>
+                <span class="k t hd-text-menu-main">
+                    THÔNG TIN CƠ SỞ
+                </span>
+                <a href="/admin/dangbo">
+                    <span class="k t hd-text-menu">
+                        <i class="fa fa-star hd-id-start" aria-hidden="true"></i>
+                        Đảng bộ
+                    </span>
+                </a>
+                <a href="/admin/chibo">
+                    <span class="k t hd-text-menu">
+                        <i class="fa fa-star hd-id-start" aria-hidden="true"></i>
+                        Chi bộ
+                    </span>
+                </a>
+                <a href="/admin/donvi">
+                    <span class="k t hd-text-menu">
+                        <i class="fa fa-star hd-id-start" aria-hidden="true"></i>
+                        Đơn vị
+                    </span>
+                </a>
+
+                <span class="k t hd-text-menu-main">
+                    QUẢN LÝ ĐẢNG VIÊN
+                </span>
+                <a href="/admin/dangvien">
+                    <span class="k t hd-text-menu">
+                        <i class="fa fa-star hd-id-start" aria-hidden="true"></i>
+                        Đảng viên
+                    </span>
+                </a>
+                <a href="/admin/form">
+                    <span class="k t hd-text-menu">
+                        <i class="fa fa-star hd-id-start" aria-hidden="true"></i>
+                        Biểu mẫu
+                    </span>
+                </a>
+                <a href="/admin/bonus">
+                    <span class="k t hd-text-menu">
+                        <i class="fa fa-star hd-id-start" aria-hidden="true"></i>
+                        Khen thưởng
+                    </span>
+                </a>
+                <a href="/admin/discripline">
+                    <span class="k t hd-text-menu">
+                        <i class="fa fa-star hd-id-start" aria-hidden="true"></i>
+                        Kỷ luật
+                    </span>
+                </a>
+                <a href="/admin/NewAbroad">
+                    <span class="k t hd-text-menu">
+                        <i class="fa fa-star hd-id-start" aria-hidden="true"></i>
+                        Đi nước ngoài
+                    </span>
+                </a>
+
+
+                <span class="k t hd-text-menu-main">
+                    QUẢN LÝ NGHIỆP VỤ
+                </span>
+                <a href="/admin/LivingAdherer">
+                    <span class="k t hd-text-menu">
+                        <i class="fa fa-star hd-id-start" aria-hidden="true"></i>
+                        Sinh hoạt Đảng
+                    </span>
+                </a>
+                <a href="/admin/manageuser">
+                    <span class="k t hd-text-menu">
+                        <i class="fa fa-star hd-id-start" aria-hidden="true"></i>
+                        Quản lý Đảng viên
+                    </span>
+                </a>
+                <a href="/admin/dangvienmove">
+                    <span class="k t hd-text-menu">
+                        <i class="fa fa-star hd-id-start" aria-hidden="true"></i>
+                        Chuyển Đảng
+                    </span>
+                </a>
+                <a href="/admin/finance">
+                    <span class="k t hd-text-menu">
+                        <i class="fa fa-star hd-id-start" aria-hidden="true"></i>
+                        Tài chính
+                    </span>
+                </a>
+                <a href="/admin/report">
+                    <span class="k t hd-text-menu hd-text-menu-main">
+                        THỐNG KÊ
+                    </span>
+                </a>
+
+            </div>
+            <div class="k hd-right-body">
+                @RenderBody()
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="k h-f-ft">
+                <span class="k t h-t-ft">TRANG QUẢN LÝ ĐẢNG VIÊN THUỘC TRUNG TÂM CÔNG NGHỆ THÔNG TIN </span>
+                <span class="k t h-t-ft">Địa chỉ : 12/1 Nguyễn Thị Minh Khai, Phường ĐaKao, Quận 1, TP.HCM  </span>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/v3.14/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/jquery/moment.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/lib/bootbox/bootbox.min.js"></script>
+    <script src="~/lib/jquery/dist/notify.min.js"></script>
+    <script src="~/js/login/token.js"></script>
+    <script src="~/js/admin/adconfig.js"></script>
+    <script src="~/lib/dropdown/fstdropdown.js"></script>
+    @RenderSection("Script", required: false)
+</body>
+</html>
+
+

@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "Form";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+
+
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/user/form.css">
+}
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h1>Biểu mẫu</h1>
+                                    <div class="k f-inf" id="user-form">
+                                        <div class="k row-table">
+                                            <span class="k t tt-table">STT</span>
+                                            <span class="k t tt-table">Tên biểu mẫu</span>
+                                            <span class="k t tt-table">Ghi chú</span>
+                                            <span class="k t tt-table">Ngày upload</span>
+                                            <span class="k t tt-table">Tải về</span>
+                                        </div>
+                                        @*item here*@
+                                    </div>
+                                    @*<div>
+                                            <button style="margin-top:30px" onclick="CreateDataDiscipline()" class="col-sm-2 col-form-label btn btn-primary">
+                                                Lưu
+                                            </button>
+                                        </div>*@
+                                </div>
+                            </div>
+                            <!-- Main-body end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Script{
+
+    <script>
+        try {
+            var fileid = (@ViewBag.fileid) ?@ViewBag.fileid: null;
+
+        }
+        catch (er) {
+            alert("error");
+        }
+    </script>
+    <script src="~/js/user/getform.js"></script>
+}
+

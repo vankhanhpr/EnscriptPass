@@ -1,0 +1,188 @@
+﻿
+@{
+    ViewData["Title"] = "Discripline";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/admin/adbonus.css">
+}
+
+<div class="k main-form">
+    <div class="k body-form">
+        <div class="k tab-title">
+            <span class="k t t-title">Quản lý kỷ luật</span>
+            <span class="k t t-note-dangbo">Đảng bộ:</span>
+            <select class="k t select-option" id="sl-dangbo"></select>
+            <span class="k t t-note-dangbo">Chi bộ:</span>
+            <select class="k t select-option" id="sl-chibo">
+                @*<option value="1">Viễn thông TP.HCM</option>*@
+            </select>
+            <span class="t bnt-add-new" onclick="getUserByCb()" data-toggle="modal" data-target="#modaladddesciption">+Thêm mới</span>
+        </div>
+        <div class="k tab-filte">
+            <span class="k t t-form-day">Từ ngày: </span>
+            <div class="k form-datetime">
+                <div class="form-group">
+                    <div class='input-group date' id='datepicker-startday'>
+                        <input type='text' class="form-control" id="fromday" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <span class="k t t-form-day">đến ngày: </span>
+            <div class="k form-datetime">
+                <div class="form-group">
+                    <div class='input-group date' id='datepicker-endday'>
+                        <input type='text' class="form-control" id="today" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="k f-search-ft">
+                <input class="k search-ft" id="search-box" onkeyup="filterDisByBox()" type="text">
+                <i class="fa fa-search bnt-search" aria-hidden="true"></i>
+            </div>
+
+        </div>
+        <div class="k main-body"id="form-body-dis">
+            <div class="k row-item row-item-main" >
+                <span class="k t text-item small-item item-main">STT</span>
+                <span class="k t text-item small-item item-main">Mã ĐV</span>
+                <span class="k t text-item big-item item-main">Tên ĐV</span>
+                <span class="k t text-item item item-main">Ngày vào Đảng</span>
+                <span class="k t text-item item item-main">Ngày kỉ luật</span>
+                <span class="k t text-item big-item item-main">Nội dung</span>
+                <span class="k t text-item small-item item-main">Cập nhật</span>
+            </div>
+            <span class="k t t-nodata" id="tab-nodata">KHÔNG CÓ DỮ LIỆU</span>
+            @*<div class="k row-item">
+            <span class="k t text-item small-item">1</span>
+            <span class="k t text-item small-item">LH012345</span>
+            <span class="k t text-item big-item">Nguyen Van A</span>
+            <span class="k t text-item item">12/12/2012</span>
+            <span class="k t text-item item">20/20/2019</span>
+            <span class="k t text-item big-item">Vi phạm trong công tác Đảng</span>
+            <span class="k t text-item small-item">
+                <i class="fa fa-trash-o ic-font" aria-hidden="true"></i>
+                <i class="fa fa-pencil-square-o ic-font" data-toggle="modal" data-target="#modalupdatedesciption"></i>
+            </span>
+        </div>*@
+        </div>
+
+        @*add new desciption*@
+        <div class="modal fade" id="modaladddesciption" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Khai báo kỷ luật</h4>
+                    </div>
+                    <div class="k modal-body">
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-fml">Đảng viên: </span>
+                            <select class="k dl-sl-fml fstdropdown-select" id="sl-user">
+                            </select>
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-fml">Kỷ luật: </span>
+                            <input class="k dl-input-fml" id="disname" type="text" />
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-fml">Đơn vị: </span>
+                            <input class="k dl-input-fml" id="orgadddis" type="text" />
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-fml" id="">Thời gian kỉ luật: </span>
+                            <div class="form-group">
+                                <div class='input-group date' id='datepicker-add-des'>
+                                    <input type='text' class="form-control" id="timedisaddnew" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-fml">Ghi chú: </span>
+                            <textarea class="k dl-input-fml note-bonus" id="notedisaddnew" type="text"></textarea>
+                        </div>
+                        <span class="k t err-validate" id="err-add-discipline">**Vui lòng điền đầy đủ thông tin</span>
+                        @*<span class="k dl-bnt-save" onclick="validateDis()">Thêm mới</span>*@
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="k btn btn-default bnt-close-form" data-dismiss="modal">
+                            Đóng
+                        </button>
+                        <span class="k dl-bnt-save" onclick="validateDis()">
+                            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                            Thêm mới
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        @*update desciption*@
+        <div class="modal fade" id="modalupdatedesciption" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Cập nhật kỷ luật</h4>
+                    </div>
+                    <div class="k modal-body">
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-fml">Kỷ luật: </span>
+                            <input class="k dl-input-fml" id="namedisciplineupdate" type="text" />
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-fml">Đơn vị: </span>
+                            <input class="k dl-input-fml" id="orgdisciplineupdate" type="text" />
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-fml" id="">Thời gian kỉ luật: </span>
+                            <div class="form-group">
+                                <div class='input-group date' id='datepicker-update-discipline'>
+                                    <input type='text' class="form-control" id="timeupdatediscipline" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-fml">Ghi chú: </span>
+                            <textarea class="k dl-input-fml note-bonus" id="notedisciplineupdate" type="text"></textarea>
+                        </div>
+                        <span class="k t err-validate" id="err-update-discipline">**Vui lòng điền đầy đủ thông tin</span>
+                        @*<span class="k dl-bnt-save" onclick="validateDiscipline()">Cập nhật</span>*@
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="k btn btn-default bnt-close-form" data-dismiss="modal">
+                            Đóng
+                        </button>
+                        <span class="k dl-bnt-save" onclick="validateDiscipline()">
+                            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                            Cập nhật
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@section Script{
+    <script src="~/js/admin/adnewdiscripline.js"></script>
+}
+

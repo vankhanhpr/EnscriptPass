@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="~/css/user/icon/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/user/user_layout.css">
+    <link rel="stylesheet" type="text/css" href="~/css/user/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/user/custom.css" />
+    <link rel="icon" type="image/png" href="~/images/user/logo.png" />
+    <link rel="stylesheet" type="text/css" href="~/css/user/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/user/icon/themify-icons/themify-icons.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/user/datetimepicker-master/jquery.datetimepicker.css" />
+
+    @RenderSection("Css", required: false)
+</head>
+<body>
+    <div id="banner-main-top" class="hd-main header-navbar ">
+        <a style="cursor:default" href="javascript:void(0)"><div class="k bg hd-avt"></div></a>
+        <div class="k h-f-tt">
+            <span class="k h-t-page-ad">TRANG QUẢN LÝ</span>
+            <span class="k h-t-namepage">CHI BỘ TRUNG TÂM CÔNG NGHỆ THÔNG TIN</span>
+        </div>
+    </div>
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-container navbar-wrapper">
+            <nav id="navbar-menu" class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="container-fluid">
+                        <div class="header">
+
+                        </div>
+                    </div>
+                    <div class="navbar-logo">
+                        <a href="/home/index">
+                            <img class="img-fluid img-logo" src="~/images/user/logo.png" alt="Theme-Logo" />
+                        </a>
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-right">
+                            <li class="user-profile header-notification">
+                                <a style="cursor:pointer" href="javascript:void(0)" class="img-radius">
+                                    <span><i style="font-size: 20px" class="ti-user"></i></span>
+                                    
+                                </a>
+                                <ul class="show-notification profile-notification">
+                                    <li style="cursor:pointer" onclick="gottoChangePassword()">
+                                        <a>
+                                            <i class="ti-settings"></i> Đổi mật khẩu
+                                        </a>
+                                    </li>
+                                    <li onclick="logOut()">
+                                        <a href="javascript:void(0)">
+                                            <i class="ti-layout-sidebar-left"></i> Đăng xuất
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav id="navbar-left" class="pcoded-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="menu">
+                                    <a style="cursor:pointer" href="/home/index">
+                                        <span class="pcoded-micon"><i class="ti-id-badge"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">
+                                            Thông tin cá
+                                            nhân
+                                        </span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="menu">
+                                    <a style="cursor:pointer" onclick="gottoFamily()">
+                                        <span class="pcoded-micon"><i class="ti-bag"></i><b></b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">
+                                            Quan hệ gia
+                                            đình
+                                        </span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="menu">
+                                    <a style="cursor:pointer" onclick="gottoAbroad()">
+                                        <span class="pcoded-micon"><i class="ti-world"></i><b></b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Xuất cảnh</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="menu">
+                                    <a style="cursor:pointer" onclick="gottoForm()">
+                                        <span class="pcoded-micon"><i class="ti-link"></i><b></b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Biểu mẫu</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="menu">
+                                    <a style="cursor:pointer" onclick="gottoReward()">
+                                        <span class="pcoded-micon"><i class="ti-crown"></i><b></b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Khen thưởng</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="menu">
+                                    <a style="cursor:pointer" onclick="gottoDiscipline()">
+                                        <span class="pcoded-micon"><i class="ti-flag-alt-2"></i><b></b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Kỉ luật</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="k h-f-ft">
+            <span class="k t h-t-ft">TRANG QUẢN LÝ ĐẢNG VIÊN THUỘC TRUNG TÂM CÔNG NGHỆ THÔNG TIN </span>
+            <span class="k t h-t-ft">Giấy phép được cấp : </span>
+            <span class="k t h-t-ft">Địa chỉ : 12/1 Nguyễn Thị Minh Khai, Phường ĐaKao, Quận 1, TP.HCM  </span>
+        </div>
+    </footer>
+
+
+    <script src="~/js/user/js/jquery/jquery.min.js"></script>
+    <script src="~/js/user/js/datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
+    <script src="~/js/user/js/popper.js/popper.min.js"></script>
+    <script src="~/js/user/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/js/user/js/script.js"></script>
+    <script src="~/js/user/js/pcoded.min.js"></script>
+    <script src="~/js/user/js/vartical-demo.js"></script>
+    <script src="~/js/user/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/lib/bootbox/bootbox.min.js"></script>
+    <script src="~/js/common/constant.js"></script>
+    <script src="~/js/common/validate.js"></script>
+    <script src="~/js/common/common.js"></script>
+    <script src="~/js/user/js/custom.js"></script>
+    <script src="~/js/user/userconfig.js"></script>
+
+    @RenderSection("Script", required: false)
+</body>
+</html>
+
+

@@ -1,0 +1,315 @@
+﻿@import url("adconfig.css");
+
+:root {
+    --xxx:white;
+}
+
+@media only screen and (min-width:0) {
+    .body-form {
+        width: 100%;
+        padding: 0 5%;
+        background-color: var(--bg-main);
+    }
+
+    .f-add-cb {
+        width: 100%;
+        padding-top: 5px;
+    }
+    .t-name-cb{
+        color:var(--cl-text-bl);
+        font-weight:600;
+        width:100%;
+        background-color:var(--xxx);
+    }
+    .f-search-ft {
+        border-radius: 4px;
+        border: 1px solid rgba(51,51,51,0.1);
+        background-color: var(--xxx);
+    }
+    .search-ft {
+        width: auto;
+        border: none;
+    }
+    .t-name-cb {
+        color: var(--cl-text-bl);
+        text-align: left;
+    }
+
+    .dl-ft-db {
+        position: relative;
+        float: right;
+        padding: 5px;
+        border: 1px solid rgba(51,51,51,0.1);
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .dl-ft-db option {
+            padding: 5px;
+            position: relative;
+            float: left;
+            cursor:pointer;
+        }
+
+    .bnt-add-cb {
+        color: var(--cl-text-bl);
+        border: 1px solid rgba(51,51,51,0.1);
+        float: right;
+        padding: 2px 5px;
+        border-radius: 4px;
+        background-color: var(--bg-button);
+        cursor: pointer;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    }
+
+    .f-inf {
+        width: 100%;
+        background-color: white;
+    }
+
+    .row-table-main {
+        width: 100%;
+        border: 1px solid rgba(51,51,51,0.1);
+        background-color: var(--color-head-table);
+    }
+    .row-table {
+        width: 100%;
+        border: 1px solid rgba(51,51,51,0.1);
+    }
+
+    .tt-table {
+        color: var(--cl-text-bl);
+        font-weight: 600;
+        text-align: left;
+        width: 25%;
+        font-size: var(--fs-dt);
+        border-right: 1px solid rgba(51,51,51,0.1);
+        padding: 10px;
+    }
+
+    .tt-table-dt {
+        color: var(--cl-text-bl);
+        text-align: left;
+        width: 25%;
+        font-size: var(--fs-dt);
+        border-right: 1px solid rgba(51,51,51,0.1);
+        padding: 10px;
+    }
+
+    .fa-cogs {
+        cursor: pointer;
+    }
+
+    .fa-trash-o {
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .dl-sm-it {
+        width: 100%;
+    }
+
+    .dl-name-cb {
+        color: var(--cl-text-bl);
+        width: 30%;
+    }
+
+    .dl-input-cb {
+        color: var(--cl-text-bl);
+        width: 70%;
+        border-radius: 4px;
+        border: 1px solid rgba(51,51,51,0.2);
+        padding: 5px;
+    }
+
+    .dl-sl-cb {
+        color: var(--cl-text-bl);
+        width: 70%;
+        border: 1px solid rgba(51,51,51,0.2);
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    /*.dl-bnt-save {
+        color: var(--cl-text-wt);
+        width: 100%;
+        text-align: center;
+        background-color: var(--bg-button);
+        border-radius: 4px;
+        cursor: pointer;
+    }*/
+    .btn-default {
+        float: right;
+        margin-top: 5px;
+    }
+
+    .dl-bnt-save {
+        color: var(--cl-text-bl);
+        border: 1px solid rgba(51,51,51,0.1);
+        float: right;
+        padding: 3px 5px;
+        border-radius: 4px;
+        background-color: var(--bg-button);
+        cursor: pointer;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+        width: auto;
+        padding: 6px 12px;
+        text-align: center;
+        font-weight: 600;
+        margin-right: 5px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .f-inf {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .dl-ft-db {
+        width: auto;
+        margin-right: 20px;
+        min-width: 150px;
+    }
+
+    .f-chibo {
+        padding: 10px 10px 0 10px;
+        min-height: 50px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 10px;
+    }
+
+    .dl-bnt-save {
+        padding: 5px;
+        font-size: var(--fs-dt);
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width:768px) {
+    .f-inf {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .dl-ft-db {
+        width: auto;
+        margin-right: 20px;
+        min-width: 150px;
+    }
+
+    .f-chibo {
+        padding: 10px 10px 0 10px;
+        min-height: 50px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 10px;
+    }
+
+    .dl-bnt-save {
+        padding: 5px;
+        font-size: var(--fs-dt);
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .f-inf {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .dl-ft-db {
+        width: auto;
+        margin-right: 20px;
+        min-width: 150px;
+    }
+
+    .f-chibo {
+        padding: 10px 10px 0 10px;
+        min-height: 50px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 10px;
+    }
+
+    .dl-bnt-save {
+        padding: 5px;
+        font-size: var(--fs-dt);
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width:1200px) {
+    .f-inf {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .dl-ft-db {
+        width: auto;
+        margin-right: 20px;
+        min-width: 150px;
+    }
+
+    .f-chibo {
+        padding: 10px 10px 0 10px;
+        min-height: 50px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 10px;
+    }
+
+    .dl-bnt-save {
+        padding: 5px;
+        font-size: var(--fs-dt);
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+} 
+
+
+@media only screen and (min-width:1200px) {
+    .f-inf {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .t-name-cb {
+        font-size:var(--fs-dt);
+        padding:5px;
+        margin-bottom:5px;
+    }
+    .f-search-ft {
+        padding: 3px;
+    }
+    .dl-ft-db {
+        width: auto;
+        margin-right: 20px;
+        min-width: 150px;
+    }
+
+    .f-chibo {
+        padding: 10px 10px 0 10px;
+        min-height: 50px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 10px;
+    }
+
+    .dl-bnt-save {
+        padding: 5px;
+        font-size: var(--fs-dt);
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+}

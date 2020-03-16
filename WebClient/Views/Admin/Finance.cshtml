@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewData["Title"] = "Finance";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/admin/adfinance.css">
+}
+<div class=" k main-form">
+    <div class="k body-form">
+        <span class="k t title-finance">
+            <span class="k t t-title-finance">Quản lý ngân sách</span>
+            <span class="k t t-note-dangbo">Đảng bộ:</span>
+            <select class="k t select-option" id="sl-dangbo"></select>
+            <span class="k t t-note-dangbo">Chi bộ:</span>
+            <select class="k t select-option" id="sl-chibo">
+                @*<option value="1">Viễn thông TP.HCM</option>*@
+            </select>
+            <span class="total-money" id="total-money"></span>
+            <span class="bnt-add-finance" data-toggle="modal" data-target="#modalinsertfinance">+Thêm mới</span>
+        </span>
+        <div class="k table-finance">
+            <div class=" k item-table" id="tab-in">
+                <div class="main-row">
+                    Thu
+                </div>
+                <div class="k title-item-row row-item-main">
+                    <span class=" k t detail-row">STT</span>
+                    <span class=" k t detail-row ">Tên khoản</span>
+                    <span class=" k t detail-row ">Số tiền</span>
+                </div>
+                @*<div class="k title-item-row">
+                        <span class=" k t detail-row">1</span>
+                        <span class=" k t detail-row ">Thu Công đoàn</span>
+                        <span class=" k t detail-row ">
+                            100,000 đ
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="k title-item-row">
+                        <span class=" k t detail-row">2</span>
+                        <span class=" k t detail-row ">THU HỊU</span>
+                        <span class=" k t detail-row ">
+                            100,000 đ
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </span>
+                    </div>*@
+            </div>
+            <div class=" k item-table" id="tab-out">
+                <div class="main-row">
+                    Chi
+                </div>
+                <div class="k title-item-row row-item-main">
+                    <span class=" k t detail-row">STT</span>
+                    <span class=" k t detail-row ">Tên khoản</span>
+                    <span class=" k t detail-row ">Số tiền</span>
+                </div>
+            </div>
+        </div>
+        <span class=" k t text-chart-revanue">Thống kê chi tiêu trong Chi bộ</span>
+        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </div>
+
+    @*insert finance*@
+    <div class="modal fade" id="modalinsertfinance" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Thêm mới tài chính</h4>
+                </div>
+                <div class="k modal-body">
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-finance">Tên khoản: </span>
+                        <input class="k dl-input-finance" id="ip-name-finance" type="text" />
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-finance">Thuộc khoản: </span>
+                        <select class="k dl-input-finance" id="sl-type-finance">
+                            <option class="t" value="0">Thu</option>
+                            <option class="t" value="1">Chi</option>
+                        </select>
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-finance">Người thu/chi: </span>
+                        <input class="k dl-input-finance" id="person-finance" type="text" />
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-finance" id="sl-db-active">Số tiền: </span>
+                        <input class="k dl-input-finance" id="money" onkeyup="changeKeyPress(this)" type="text" placeholder="0 vnđ" />
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-finance" id="">Ngày chi/thu: </span>
+                        <div class="form-group">
+                            <div class='input-group date' id='datepicker-money'>
+                                <input type='text' class="form-control" id="daymoney" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="k t err-validate" id="err-insert-finance">**Vui lòng điền đầy đủ thông tin</span>
+                    @*<span class="k dl-bnt-save" onclick="validateFinance()">Cập nhật</span>*@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="k btn btn-default bnt-close" data-dismiss="modal">
+                        Đóng
+                    </button>
+                    <span class="k dl-bnt-save" onclick="validateFinance()">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        Cập nhật
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Script{
+    <script type="text/javascript" src="~/lib/chart/highcharts.js"></script>
+    <script src="~/js/admin/adfinance.js"></script>
+}

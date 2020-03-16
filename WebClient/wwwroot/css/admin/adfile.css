@@ -1,0 +1,865 @@
+﻿@import url("adconfig.css");
+
+:root{
+    --bg-f-file:white;
+    --f-ic:14px;
+}
+
+@media only screen and (min-width:0){
+    .body-form{
+        width:100%;
+        padding:0 0%;
+        background-color:var(--bg-main);
+    }
+
+    .warning{
+        color:red;
+    }
+
+    .name-file{
+        color:var(--cl-text-bl);
+        font-weight:600;
+        text-align:left;
+        padding:5px;
+    }
+    .bnt-to-abroad{
+        position:relative;
+        float:right;
+        border-radius:4px;
+        border:1px solid rgba(51,51,51,0.1);
+        background-color:var(--bg-button);
+        padding:3px 5px;
+        color:var(--cl-text-wt);
+        margin-top:5px;
+        cursor:pointer;
+    }
+    .f-bd-file {
+        width: 100%;
+        background-color: var(--bg-f-file);
+    }
+    .row-item{
+        width:100%;
+    }
+    .tab-avt{
+        width:100%;
+    }
+    .border-area{
+        border:1px solid rgba(51,51,51,0.1);
+        padding:5px;
+        margin-top:10px;
+        margin-bottom:20px;
+        width:100%;
+    }
+    .brower-avt {
+        position: absolute;
+        padding: 2px 5px;
+        border: 1px solid rgba(51,51,51,0.1);
+        color: var(--cl-text-wt);
+        font-weight: 300;
+        background-color: rgba(51,51,51,0.3);
+        cursor: pointer;
+        border-radius: 4px;
+        width: 100px;
+        left: 0;
+        right: 0;
+        bottom: 5px;
+        margin: auto;
+        text-align: center;
+        display: none;
+    }
+    .img-avt-file {
+        cursor:pointer;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url(/images/admin/avt-us-defaul.png);
+        border: 1px solid rgba(51,51,51,0.1);
+    }
+        .img-avt-file:hover .brower-avt{
+            display:block;
+        }
+        .t-avt-left, .t-avt-addres {
+            color: var(--cl-text-bl);
+            text-align: left;
+            font-weight: 300;
+        }
+    .ip-avt-t, .sl-avt-add, .ip-avt-add {
+        color: var(--cl-text-bl);
+        text-align: left;
+        font-weight: 300;
+        border: 1px solid rgba(51,51,51,0.1);
+        border-radius: 4px;
+        cursor:pointer;
+    }
+    .bd-tab-body{
+        width:100%;
+    }
+    .tab-body {
+        width: 50%;
+        padding:0 10px;
+    }
+    .row-item-body{
+        width:100%;
+        padding:5px;
+    }
+    .row-item-body-add{
+        border:1px solid rgba(51,51,51,0.05);
+        padding:10px;
+        width:100%;
+        border-radius:4px;
+    }
+    .input-group{
+        cursor:pointer;
+    }
+    .bnt-update-file{
+        border-radius:4px;
+        color:var(--cl-text-wt);
+        padding:3px 5px;
+        text-align:right;
+        position:relative;
+        border:1px solid  rgba(51,51,51,0.1);
+        background-color:var(--bg-button);
+        float:right;
+        cursor:pointer;
+    }
+
+    .left-form-card{
+        border:1px dashed rgba(51,51,51,0.1);
+        border-radius:4px;
+    }
+    .brower-card{
+        color:var(--bg-button);
+        border-radius:4px;
+        border:1px dashed rgba(51,51,51,0.1);
+        position:relative;
+        float:right;
+        cursor:pointer;
+        font-weight:300;
+    }
+
+    .err-validate {
+        color: red;
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+        display: none;
+    }
+    /*family*/
+    .tab-note-family {
+        width: 100%;
+        padding: 5px 0;
+        color: var(--cl-text-bl);
+        font-weight: 300;
+    }
+    .ic-show-ft {
+        position: relative;
+        float: left;
+        color: red;
+        cursor: pointer;
+        transition: all 0.2s linear;
+        -ms-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(0deg);
+    }
+    .fa-cogs, .fa-trash-o {
+        cursor: pointer;
+        position: relative;
+        float: left;
+        color: var(--cl-text-bl);
+    }
+    .bnt-add-fml {
+        border-radius: 4px;
+        color: var(--cl-text-bl);
+        padding: 2px 5px;
+        text-align: right;
+        position: relative;
+        border: 1px solid rgba(51,51,51,0.1);
+        float: right;
+        cursor: pointer;
+    }
+    .tab-family {
+        width: 100%;
+        background-color: var(--bg-f-file);
+    }
+    .row-table {
+        width: 100%;
+        border: 1px solid rgba(51,51,51,0.1);
+    }
+    .bold{
+        font-weight:600;
+    }
+    .tt-table-dt {
+        color: var(--cl-text-bl);
+        text-align: left;
+        width: 20%;
+        font-size: var(--fs-dt);
+        border-right: 1px solid rgba(51,51,51,0.1);
+        padding: 10px;
+    }
+    .modal-body{
+        width:100%;
+    }
+    .dl-sm-it{
+        width:100%;
+    }
+    .dl-name-fml {
+        color: var(--cl-text-bl);
+        text-align: left;
+    }
+    .dl-input-fml{
+        color:var(--cl-text-bl);
+        text-align:left;
+        border:1px solid rgba(51,51,51,0.1);
+        border-radius:4px;
+    }
+    .dl-sl-fml {
+        color: var(--cl-text-bl);
+        text-align: left;
+        border: 1px solid rgba(51,51,51,0.1);
+        border-radius: 4px;
+        cursor:pointer;
+        padding:5px;
+    }
+    /*.dl-bnt-save {
+        border-radius: 4px;
+        color: var(--cl-text-wt);
+        padding: 3px 5px;
+        text-align: right;
+        position: relative;
+        border: 1px solid rgba(51,51,51,0.1);
+        background-color: var(--bg-button);
+        float: right;
+        cursor: pointer;
+        text-align:center;
+    }*/
+    .bnt-close-form {
+        float: right;
+        margin-top: 5px;
+    }
+
+    .dl-bnt-save {
+        color: var(--cl-text-bl);
+        border: 1px solid rgba(51,51,51,0.1);
+        float: right;
+        padding: 3px 5px;
+        border-radius: 4px;
+        background-color: var(--bg-button);
+        cursor: pointer;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+        width: auto;
+        padding: 6px 12px;
+        text-align: center;
+        font-weight: 600;
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+    /*bonus*/
+    .tab-bonus, .tab-discipline {
+        width: 100%;
+        background-color: var(--bg-f-file);
+    }
+    #tab-family, #tab-bonus, #tab-boldiscipline {
+        display: block;
+    }
+    .down {
+        -ms-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        transition: all 0.4s linear;
+    }
+    .err-ip {
+        border: 1px solid rgba(255, 0, 0,0.4);
+    }
+}
+@media only screen and (max-width: 600px) {
+    .name-file {
+        font-size: var(--fs-tt);
+        margin-top: 10px;
+    }
+    .tab-body {
+        width: 100%;
+    }
+    .tab-avt {
+        margin-bottom: 20px;
+    }
+
+    .f-bd-file {
+        margin-top: 20px;
+        padding: 5px;
+    }
+
+    .img-avt-file {
+        width: 20%;
+        height: 150px;
+    }
+
+    .f-t-avt {
+        width: 80%;
+        padding: 10px 5%;
+    }
+
+    .row-item-body-add {
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .t-avt-left {
+        font-size: var(--fs-dt);
+        width: 30%;
+        margin-top: 5px;
+    }
+
+    .t-avt-addres {
+        font-size: var(--fs-dt);
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .ip-avt-t {
+        font-size: var(--fs-dt);
+        padding: 5px;
+        width: 70%;
+    }
+
+    .ip-avt-add {
+        font-size: var(--fs-dt);
+        padding: 5px;
+        width: 100%;
+        font-size: var(--fs-dt);
+        padding: 5px;
+        margin-top: 20px;
+    }
+
+    .sl-avt-add {
+        width: 33.333%;
+        padding: 5px;
+        margin-top: 2px;
+        cursor: pointer;
+    }
+
+    .bnt-update-file {
+        font-size: var(--fs-dt);
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    /*family*/
+    .tab-note-family {
+        font-size: var(--fs-tt);
+        margin-top: 10px
+    }
+
+    .ic-show-ft {
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: var(--f-ic);
+    }
+
+    .bnt-add-fml {
+        font-size: var(--fs-dt);
+        margin-right: 5px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 20px;
+    }
+
+    .dl-sl-fml {
+        width: 70%;
+    }
+
+    .dl-name-fml {
+        font-size: var(--fs-dt);
+        width: 30%;
+    }
+
+    .dl-input-fml {
+        width: 70%;
+        padding: 5px;
+    }
+
+    .dl-bnt-save {
+        font-size: var(--fs-dt);
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .fa-cogs, .fa-trash-o {
+        font-size: var(--fs-dt);
+        margin-left: 5px;
+    }
+    /*bomus*/
+    .note-bonus {
+        min-height: 130px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width:768px) {
+    .name-file {
+        font-size: var(--fs-tt);
+        margin-top: 5px;
+    }
+
+    .tab-avt {
+        margin-bottom: 20px;
+    }
+
+    .f-bd-file {
+        margin-top: 20px;
+        padding: 5px;
+    }
+
+    .img-avt-file {
+        width: 20%;
+        height: 150px;
+    }
+
+    .f-t-avt {
+        width: 80%;
+        padding: 10px 5%;
+    }
+
+    .row-item-body-add {
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .t-avt-left {
+        font-size: var(--fs-dt);
+        width: 30%;
+        margin-top: 5px;
+    }
+
+    .t-avt-addres {
+        font-size: var(--fs-dt);
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .ip-avt-t {
+        font-size: var(--fs-dt);
+        padding: 5px;
+        width: 70%;
+    }
+
+    .ip-avt-add {
+        font-size: var(--fs-dt);
+        padding: 5px;
+        width: 100%;
+        font-size: var(--fs-dt);
+        padding: 5px;
+        margin-top: 20px;
+    }
+
+    .sl-avt-add {
+        width: 33.333%;
+        padding: 5px;
+        margin-top: 2px;
+        cursor: pointer;
+    }
+
+    .bnt-update-file {
+        font-size: var(--fs-dt);
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    /*family*/
+    .tab-note-family {
+        font-size: var(--fs-tt);
+        margin-top: 10px
+    }
+
+    .ic-show-ft {
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: var(--f-ic);
+    }
+
+    .bnt-add-fml {
+        font-size: var(--fs-dt);
+        margin-right: 5px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 20px;
+    }
+
+    .dl-sl-fml {
+        width: 70%;
+    }
+
+    .dl-name-fml {
+        font-size: var(--fs-dt);
+        width: 30%;
+    }
+
+    .dl-input-fml {
+        width: 70%;
+        padding: 5px;
+    }
+
+    .dl-bnt-save {
+        font-size: var(--fs-dt);
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .fa-cogs, .fa-trash-o {
+        font-size: var(--fs-dt);
+        margin-left: 5px;
+    }
+    /*bomus*/
+    .note-bonus {
+        min-height: 130px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .name-file {
+        font-size: var(--fs-tt);
+        margin-top: 5px;
+    }
+
+    .tab-avt {
+        margin-bottom: 20px;
+    }
+
+    .f-bd-file {
+        margin-top: 20px;
+        padding: 5px;
+    }
+
+    .img-avt-file {
+        width: 20%;
+        height: 150px;
+    }
+
+    .f-t-avt {
+        width: 80%;
+        padding: 10px 5%;
+    }
+
+    .row-item-body-add {
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .t-avt-left {
+        font-size: var(--fs-dt);
+        width: 30%;
+        margin-top: 5px;
+    }
+
+    .t-avt-addres {
+        font-size: var(--fs-dt);
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .ip-avt-t {
+        font-size: var(--fs-dt);
+        padding: 5px;
+        width: 70%;
+    }
+
+    .ip-avt-add {
+        font-size: var(--fs-dt);
+        padding: 5px;
+        width: 100%;
+        font-size: var(--fs-dt);
+        padding: 5px;
+        margin-top: 20px;
+    }
+
+    .sl-avt-add {
+        width: 33.333%;
+        padding: 5px;
+        margin-top: 2px;
+        cursor: pointer;
+    }
+
+    .bnt-update-file {
+        font-size: var(--fs-dt);
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    /*family*/
+    .tab-note-family {
+        font-size: var(--fs-tt);
+        margin-top: 10px
+    }
+
+    .ic-show-ft {
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: var(--f-ic);
+    }
+
+    .bnt-add-fml {
+        font-size: var(--fs-dt);
+        margin-right: 5px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 20px;
+    }
+
+    .dl-sl-fml {
+        width: 70%;
+    }
+
+    .dl-name-fml {
+        font-size: var(--fs-dt);
+        width: 30%;
+    }
+
+    .dl-input-fml {
+        width: 70%;
+        padding: 5px;
+    }
+
+    .dl-bnt-save {
+        font-size: var(--fs-dt);
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .fa-cogs, .fa-trash-o {
+        font-size: var(--fs-dt);
+        margin-left: 5px;
+    }
+    /*bomus*/
+    .note-bonus {
+        min-height: 130px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width:1200px) {
+    .name-file {
+        font-size: var(--fs-tt);
+        margin-top: 5px;
+    }
+
+    .tab-avt {
+        margin-bottom: 20px;
+    }
+
+    .f-bd-file {
+        margin-top: 20px;
+        padding: 5px;
+    }
+
+    .img-avt-file {
+        width: 20%;
+        height: 150px;
+    }
+
+    .f-t-avt {
+        width: 80%;
+        padding: 10px 5%;
+    }
+
+    .row-item-body-add {
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .t-avt-left {
+        font-size: var(--fs-dt);
+        width: 30%;
+        margin-top: 5px;
+    }
+
+    .t-avt-addres {
+        font-size: var(--fs-dt);
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .ip-avt-t {
+        font-size: var(--fs-dt);
+        padding: 5px;
+        width: 70%;
+    }
+
+    .ip-avt-add {
+        font-size: var(--fs-dt);
+        padding: 5px;
+        width: 100%;
+        font-size: var(--fs-dt);
+        padding: 5px;
+        margin-top: 20px;
+    }
+
+    .sl-avt-add {
+        width: 33.333%;
+        padding: 5px;
+        margin-top: 2px;
+        cursor: pointer;
+    }
+
+    .bnt-update-file {
+        font-size: var(--fs-dt);
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    /*family*/
+    .tab-note-family {
+        font-size: var(--fs-tt);
+        margin-top: 10px
+    }
+
+    .ic-show-ft {
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: var(--f-ic);
+    }
+
+    .bnt-add-fml {
+        font-size: var(--fs-dt);
+        margin-right: 5px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 20px;
+    }
+
+    .dl-sl-fml {
+        width: 70%;
+    }
+
+    .dl-name-fml {
+        font-size: var(--fs-dt);
+        width: 30%;
+    }
+
+    .dl-input-fml {
+        width: 70%;
+        padding: 5px;
+    }
+
+    .dl-bnt-save {
+        font-size: var(--fs-dt);
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .fa-cogs, .fa-trash-o {
+        font-size: var(--fs-dt);
+        margin-left: 5px;
+    }
+    /*bomus*/
+    .note-bonus {
+        min-height: 130px;
+    }
+} 
+@media only screen and (min-width:1200px){
+    .name-file {
+        font-size:var(--fs-tt);
+        margin-top:5px;
+    }
+    .tab-avt {
+        margin-bottom:20px;
+    }
+    .f-bd-file {
+        margin-top:20px;
+        padding:5px;
+    }
+    .img-avt-file {
+        width:20%;
+        height:150px;
+    }
+    .f-t-avt{
+        width:80%;
+        padding:10px 5%;
+    }
+    .row-item-body-add {
+        margin-top:20px;
+        padding: 10px;
+    }
+    .t-avt-left{
+        font-size:var(--fs-dt);
+        width:30%;
+        margin-top:5px;
+    }
+    .t-avt-addres {
+        font-size: var(--fs-dt);
+        width: 100%;
+        margin-top: 5px;
+    }
+    .ip-avt-t {
+        font-size: var(--fs-dt);
+        padding: 5px;
+        width: 70%;
+    }
+    .ip-avt-add {
+        font-size: var(--fs-dt);
+        padding: 5px;
+        width: 100%;
+        font-size: var(--fs-dt);
+        padding: 5px;
+        margin-top: 20px;
+    }
+    .sl-avt-add {
+        width: 33.333%;
+        padding: 5px;
+        margin-top: 2px;
+        cursor:pointer;
+    }
+    .bnt-update-file{
+        font-size:var(--fs-dt);
+        margin-top:30px;
+        margin-bottom:5px;
+    }
+    .left-form-card {
+        width:70%;
+        padding:5px;
+    }
+    .brower-card {
+        padding:2px 5px;
+        font-size:12px;
+    }
+
+    /*family*/
+    .tab-note-family {
+        font-size: var(--fs-tt);
+        margin-top:10px
+    }
+    .ic-show-ft {
+        margin-top: 5px;
+        margin-left:10px;
+        font-size:var(--f-ic);
+    }
+    .bnt-add-fml {
+       font-size:var(--fs-dt);
+       margin-right:5px;
+    }
+    .dl-sm-it {
+        margin-bottom:20px;
+    }
+    .dl-sl-fml{
+        width:70%;
+    }
+    .dl-name-fml {
+        font-size: var(--fs-dt);
+        width: 30%;
+    }
+    .dl-input-fml{
+        width:70%;
+        padding:5px;
+    }
+    .dl-bnt-save {
+        font-size: var(--fs-dt);
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .fa-cogs, .fa-trash-o {
+        font-size: var(--fs-dt);
+        margin-left: 5px;
+    }
+    /*bomus*/
+    .note-bonus{
+        min-height:130px;
+    }
+}

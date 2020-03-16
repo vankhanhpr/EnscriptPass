@@ -1,0 +1,3 @@
+mv Dockerfile ../Dockerfile
+ docker build -t dockersample -f DockerImageSample/Dockerfile . 
+docker run -p 9000:80 dockersample.

@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewData["Title"] = "Abroad";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/user/customabroad.css">
+}
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Chọn hình đại diện</h4>
+                <button type="button" id="btnclose" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="custom-file mb-3">
+                <input type="file" class="custom-file-input" id="customFile" name="filename" accept="image/*">
+                <label class="custom-file-label" for="customFile">Chọn ảnh đại diện</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h1>Xuất cảnh</h1>
+                                    <form class="needs-validation mode" id="user-dataxuatcanh" novalidate>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Địa điểm
+                                                đi
+                                            </label>
+                                            <div class="col-sm-5">
+                                                <input autocomplete="off" onchange="OnchangeInput('user-noiden'); return false;" id="user-noiden" name="noiden" type="text" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Từ ngày</label>
+                                            <div class="col-sm-2">
+                                                <input onchange="OnchangeInput('user-thoigiandi'); return false;" autocomplete="off" name="thoigiandi" id="user-thoigiandi"
+                                                       class="datetimepicker form-control" type="text"
+                                                       required>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">Đến ngày</label>
+                                            <div class="col-sm-2">
+                                                <input onchange="OnchangeInput('user-thoigiantrove'); return false;" autocomplete="off" name="thoigiantrove" id="user-thoigiantrove"
+                                                       class="datetimepicker form-control" type="text"
+                                                       required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Mục đích chuyến
+                                                đi
+                                            </label>
+                                            <div class="col-sm-10">
+                                                <textarea onchange="OnchangeInput('user-lydo'); return false;" name="lydo" id="user-lydo" type="text" row="5"
+                                                          class="form-control"></textarea>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                    <div>
+                                        <button  onclick="validateAll()" class="col-sm-2 col-form-label btn btn-primary">
+                                            <i class="ti-save"></i>
+                                        </button>
+                                    </div>
+                                    <div class="k f-inf" id="user-abroad">
+                                        <div class="k row-table">
+                                            <span class="k t tt-table">STT</span>
+                                            <span class="k t tt-table">Ngày đi</span>
+                                            <span class="k t tt-table">Ngày về</span>
+                                            <span class="k t tt-table">Nơi đi</span>
+                                            <span class="k t tt-table">Lý do</span>
+                                            <span class="k t tt-table">Cập nhật</span>
+                                        </div>
+                                        @*item here*@
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- Main-body end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Script{
+
+    <script>
+        try {
+            var fileid = (@ViewBag.fileid) ?@ViewBag.fileid: null;
+
+        }
+        catch (er) {
+            alert("error");
+        }
+    </script>
+    <script src="~/js/user/abroad.js"></script>
+}

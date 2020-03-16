@@ -1,0 +1,226 @@
+﻿
+@{
+    ViewData["Title"] = "DangVienMove";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/admin/addangvienmove.css">
+}
+
+<div class="k main-form">
+    <div class="k body-form">
+        <div class="k tab-title">
+            <span class="k t t-title">Quản lý chuyển Đảng</span>
+            <span class="k t t-note-dangbo">Đảng bộ:</span>
+            <select class="k t select-option" id="sl-dangbo"></select>
+            <span class="k t t-note-dangbo">Chi bộ:</span>
+            <select class="k t select-option" id="sl-chibo">
+                @*<option value="1">Viễn thông TP.HCM</option>*@
+            </select>
+            <span class="t bnt-add-new" onclick="getTitle()" data-toggle="modal" data-target="#modalinsertdangvien">
+                <i class="fa fa-plane ic-take" aria-hidden="true"></i>
+                Chuyển đến
+            </span>
+            <span class="t bnt-add-new" onclick="getUserByCb()" data-toggle="modal" data-target="#modalmovedangvien">
+                <i class="fa fa-plane" aria-hidden="true"></i>
+                Chuyển đi
+            </span>
+        </div>
+        <div class="k tab-filte">
+            <span class="k t t-form-day">Từ ngày: </span>
+            <div class="k form-datetime">
+                <div class="form-group">
+                    <div class='input-group date' id='datepicker-startday'>
+                        <input type='text' class="form-control" id="fromday" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <span class="k t t-form-day">đến ngày: </span>
+            <div class="k form-datetime">
+                <div class="form-group">
+                    <div class='input-group date' id='datepicker-endday'>
+                        <input type='text' class="form-control" id="today" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            @*<div class="k f-search-ft">
+                <input class="k search-ft" id="search-box" onkeyup="filterByBox()" type="text">
+                <i class="fa fa-search bnt-search" aria-hidden="true"></i>
+            </div>*@
+            <select class="k t select-option" id="sl-type-user">
+                <option value="0">DS chuyển đi</option>
+                <option value="1">DS chuyển đến</option>
+            </select>
+        </div>
+
+        <div class="k main-body" id="form-body-usmove">
+            <div class="k row-item row-item-main">
+                <span class="k t text-item small-item item-main">STT</span>
+                <span class="k t text-item small-item item-main">Mã ĐV</span>
+                <span class="k t text-item big-item item-main">Tên ĐV</span>
+                <span class="k t text-item item item-main">Ngày vào Đảng</span>
+                <span class="k t text-item item item-main">Ngày chuyển đi</span>
+                <span class="k t text-item big-item item-main">Nơi đến</span>
+                <span class="k t text-item small-item item-main">Cập nhật</span>
+            </div>
+            <span class="k t t-nodata" id="tab-nodata">KHÔNG CÓ DỮ LIỆU</span>
+            @*<div class="k row-item">
+            <span class="k t text-item small-item">1</span>
+            <span class="k t text-item small-item">LH012345</span>
+            <span class="k t text-item big-item">Nguyen Van A</span>
+            <span class="k t text-item item">12/12/2012</span>
+            <span class="k t text-item item">20/20/2019</span>
+            <span class="k t text-item big-item">THu duc</span>
+            <span class="k t text-item small-item">
+                <i class="fa fa-trash-o ic-font" aria-hidden="true"></i>
+                <i class="fa fa-pencil-square-o ic-font" data-toggle="modal" data-target="#modalupdatebonus"></i>
+            </span>
+        </div>*@
+        </div>
+        <div class="k main-body" id="form-body-usercome" style="display:none">
+            <div class="k row-item">
+                <span class="k t text-item small-item">STT</span>
+                <span class="k t text-item small-item">Mã ĐV</span>
+                <span class="k t text-item big-item">Tên ĐV</span>
+                <span class="k t text-item item">Ngày vào Đảng</span>
+                <span class="k t text-item item">Ngày chuyển đến</span>
+                <span class="k t text-item big-item">Nơi sinh hoạt cũ</span>
+                <span class="k t text-item small-item">Cập nhật</span>
+            </div>
+        </div>
+
+
+        @*add new dang vien*@
+        <div class="modal fade" id="modalinsertdangvien" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Đảng viên chuyến đến</h4>
+                    </div>
+                    <div class="k modal-body">
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-dv">Mã Đảng viên: </span>
+                            <input class="k dl-input-dv" id="ip-madv" type="text" maxlength="8" />
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-dv">Chức vụ Đảng: </span>
+                            <select class="k dl-sl-dv" id="sl-title">
+                                @*<option value="0">Ủy viên</option>
+                                <option value="0">Bí thư chi bộ</option>*@
+                            </select>
+                        </div>
+                        <div class="k dl-sm-it" id="go-on-business-old">
+                            <span class="k t dl-name-dv">Nơi sinh hoạt cũ: </span>
+                            <input class="k dl-input-dv" id="adress-on-bussiness" type="text" />
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-dv" id="sl-db-active">Ngày đến Chi bộ: </span>
+                            <div class="form-group">
+                                <div class='input-group date' id='datepicker-daytochibo'>
+                                    <input type='text' class="form-control" id="day-to-go" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="k dl-sm-it" id="go-on-business-old">
+                            <span class="k t dl-name-dv">Giấy giới thiệu: </span>
+                            <span class="k document-togo" type="text">
+                                <span class="t name-referral">chưa có file</span>
+                                <span class="t brower-doc" onclick="getImage()">Brower</span>
+                                <input id="upload-referral" class="hidden" style="display:none" type="file" accept="image/*" multiple="">
+                            </span>
+                        </div>
+
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-dv">Mật khẩu: </span>
+                            <input class="k dl-input-dv" id="ip-pass" type="password" />
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-dv">Nhập lại mật khẩu: </span>
+                            <input class="k dl-input-dv" id="ip-cf-pass" type="password" />
+                            <span class="k t err-validate" id="err-validate">**Vui lòng kiểm tra lại thông tin</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="k btn btn-default" data-dismiss="modal">
+                            Đóng
+                        </button>
+                        <span class="k dl-bnt-save" onclick="validateForm()">
+                            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                            Chuyển tới Chi bộ
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*chuyen dang vien di*@
+        <div class="modal fade" id="modalmovedangvien" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Chuyển Đảng viên đi</h4>
+                    </div>
+                    <div class="k modal-body">
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-dv">Chọn Đảng viên: </span>
+                            <select class="k dl-sl-dv" id="sl-user-move"></select>
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-dv">Nơi chuyển đến: </span>
+                            <input class="k dl-input-dv" id="adress-to" type="text" />
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-dv">Đơn xin chuyển Đảng: </span>
+                            <span class="k document-togo" id="tranfer" type="text">
+                                <span class="t name-form-move">chưa có file</span>
+                                <span class="t brower-doc" onclick="getImageUsmove()">Brower</span>
+                                <input id="upload-form-move" class="hidden" style="display:none" type="file" accept="image/*" multiple="">
+                            </span>
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="k t dl-name-dv">Bản tự kiểm điểm: </span>
+                            <span class="k document-togo" id="filereview" type="text">
+                                <span class="t name-myself">chưa có file</span>
+                                <span class="t brower-doc" onclick="getFormMyS()">Brower</span>
+                                <input id="upload-myself" class="hidden" style="display:none" type="file" accept="image/*" multiple="">
+                            </span>
+                        </div>
+                        <span class="k t err-validate" id="err-move-user">**Đảng viên chưa đủ điều kiện để chuyển đi</span>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="k btn btn-default" data-dismiss="modal">
+                            Đóng
+                        </button>
+                        <span class="k dl-bnt-save" onclick="validateFormMove()">
+                            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                            Chuyển đi
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+@section Script{
+    <script type="text/javascript" src="~/js/admin/addangvienmove.js"></script>
+}
+

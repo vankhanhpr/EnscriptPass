@@ -1,0 +1,340 @@
+﻿@import url("adconfig.css");
+
+:root {
+    --bg-white:white;
+}
+
+@media only screen and (min-width:0) {
+    .body-form {
+        width: 100%;
+        padding: 0 5%;
+        background-color: var(--bg-main);
+    }
+    .t-name-db{
+        color:var(--cl-text-bl);
+        font-weight:600;
+        text-align:left;
+        width:100%;
+        background-color:var(--bg-white);
+        padding:5px;
+    }
+    .f-add-ab {
+        width: 100%;
+        padding-top: 5px;
+    }
+    .bnt-add-db {
+        color: var(--cl-text-bl);
+        border: 1px solid rgba(51,51,51,0.1);
+        float: right;
+        padding: 2px 5px;
+        border-radius: 4px;
+        background-color: var(--bg-button);
+        cursor: pointer;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    }
+    .f-inf {
+        width: 100%;
+        background-color: white;
+    }
+    .fa-cogs {
+        cursor: pointer;
+    }
+    .fa-trash-o {
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .fa-toggle-on{
+        color:green;
+    }
+    .fa-toggle-off{
+        color:red;
+    }
+    /*.fa-plus {
+        cursor: pointer;
+        right: 0;
+        text-align: right;
+        float: right;
+        position: relative;
+        margin-top: 5px;
+        color: red;
+    }*/
+    .fa-angle-down {
+        cursor: pointer;
+        right: 0;
+        text-align: right;
+        float: right;
+        position: relative;
+        margin-top: 5px;
+        color: red;
+        font-size: var(--fs-dt);
+        transition: all 0.2s linear;
+        -ms-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+    .down {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        transition: all 0.4s linear;
+    }
+    .btn-default {
+        float: right;
+        margin-top: 5px;
+    }
+    .dl-bnt-save {
+        color: var(--cl-text-bl);
+        border: 1px solid rgba(51,51,51,0.1);
+        float: right;
+        padding: 3px 5px;
+        border-radius: 4px;
+        background-color: var(--bg-button);
+        cursor: pointer;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+        width: auto;
+        padding: 6px 12px;
+        text-align: center;
+        font-weight: 600;
+        margin-right: 5px;
+    }
+    /*.fa-minus {
+        cursor: pointer;
+        right: 0;
+        text-align: right;
+        float: right;
+        position: relative;
+        margin-top: 5px;
+        color: var(--cl-text-bl);
+    }*/
+
+    .row-table, .row-table-main {
+        width: 100%;
+        border: 1px solid rgba(51,51,51,0.1);
+    }
+    .tt-table {
+        color: var(--cl-text-bl);
+        font-weight: 600;
+        text-align: left;
+        width: 25%;
+        font-size: var(--fs-dt);
+        border-right: 1px solid rgba(51,51,51,0.1);
+        padding: 10px;
+    }
+    .tt-table-dt {
+        color: var(--cl-text-bl);
+        text-align: left;
+        width: 25%;
+        font-size: var(--fs-dt);
+        border-right: 1px solid rgba(51,51,51,0.1);
+        padding: 10px;
+    }
+    .f-chibo {
+        width: 100%;
+        border: 1px solid rgba(51,51,51,0.1);
+        background-color: rgba(51,51,51,0.1);
+    }
+    .t-name-chibo {
+        width: 100%;
+        color: var(--cl-text-bl);
+        padding: 10px 0;
+        border-bottom: 0.5px solid rgba(51,51,51,0.5);
+        font-size: var(--fs-dt);
+    }
+    .dl-name-db {
+        color: var(--cl-text-bl);
+        width: 30%;
+    }
+    .dl-input-db {
+        color: var(--cl-text-bl);
+        width: 70%;
+        border-radius: 4px;
+        border: 1px solid rgba(51,51,51,0.2);
+        padding: 5px;
+    }
+    .dl-sl-db {
+        color: var(--cl-text-bl);
+        width: 70%;
+        border: 1px solid rgba(51,51,51,0.2);
+        padding: 5px;
+        cursor: pointer;
+        border-radius:4px;
+    }
+    select-selected {
+        color: var(--cl-text-wt);
+        border: 1px solid transparent;
+        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        cursor: pointer;
+    }
+    select option {
+        color: var(--cl-text-bl);
+        padding: 8px 16px;
+        border: 1px solid transparent;
+        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        cursor: pointer;
+    }
+    .dl-sm-it {
+        width: 100%;
+    }
+
+    .f-search-ft {
+        border-radius: 4px;
+        border: 1px solid rgba(51,51,51,0.1);
+        background-color:var(--bg-white);
+    }
+    .search-ft {
+        width: auto;
+        border: none;
+    }
+    .bnt-search {
+        position: relative;
+        float: right;
+        color: var(--cl-text-bl);
+    }
+}
+@media only screen and (max-width: 600px) {
+    .f-inf {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .f-chibo {
+        padding: 10px 10px 0 10px;
+        min-height: 50px;
+    }
+
+    .dl-name-db, .dl-input-db {
+        font-size: var(--fs-dt);
+    }
+
+    .dl-bnt-save {
+        padding: 5px;
+        font-size: var(--fs-dt);
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width:768px) {
+    .f-inf {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .f-chibo {
+        padding: 10px 10px 0 10px;
+        min-height: 50px;
+    }
+
+    .dl-name-db, .dl-input-db {
+        font-size: var(--fs-dt);
+    }
+
+    .dl-bnt-save {
+        padding: 5px;
+        font-size: var(--fs-dt);
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .f-inf {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .f-chibo {
+        padding: 10px 10px 0 10px;
+        min-height: 50px;
+    }
+
+    .dl-name-db, .dl-input-db {
+        font-size: var(--fs-dt);
+    }
+
+    .dl-bnt-save {
+        padding: 5px;
+        font-size: var(--fs-dt);
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width:1200px) {
+    .f-inf {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .f-chibo {
+        padding: 10px 10px 0 10px;
+        min-height: 50px;
+    }
+
+    .dl-name-db, .dl-input-db {
+        font-size: var(--fs-dt);
+    }
+
+    .dl-bnt-save {
+        padding: 5px;
+        font-size: var(--fs-dt);
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 10px;
+    }
+} 
+@media only screen and (min-width:1200px) {
+    .f-inf {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .t-name-db {
+       font-size:var(--fs-dt);
+       margin-top:10px;
+       margin-bottom:5px;
+    }
+    .f-chibo {
+        padding: 10px 10px 0 10px;
+        min-height:50px;
+    }
+
+    .dl-name-db, .dl-input-db {
+        font-size: var(--fs-dt);
+    }
+
+    .dl-bnt-save {
+        padding: 5px;
+        font-size: var(--fs-dt);
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 10px;
+    }
+    .f-search-ft {
+        padding: 3px;
+    }
+    .bnt-search {
+        margin-top: 3px;
+        margin-right: 3px;
+        font-size: var(--fs-dt);
+    }
+}

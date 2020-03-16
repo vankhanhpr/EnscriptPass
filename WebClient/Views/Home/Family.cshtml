@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewData["Title"] = "Family";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/user/custom.css">
+
+
+}
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h1>Quan hệ gia đình</h1>
+                                    <form id="user-datanguoithan" class="needs-validation mode" novalidate>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Họ tên</label>
+                                            <div class="col-sm-3">
+                                                <input autocomplete="off" onchange="OnchangeInput('user-hotennguoithan'); return false;" name="name" id="user-hotennguoithan" type="text" class="form-control" required>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">
+                                                Quan hệ
+                                            </label>
+                                            <div class="col-sm-2">
+                                                <select id="user-quanhenguoithan" onchange="OnchangeInput('user-quanhenguoithan'); return false;" name="quanhe" class="form-control">
+                                                    <option value="Cha đẻ">Cha đẻ</option>
+                                                    <option value="Mẹ đẻ">Mẹ đẻ</option>
+                                                    <option value="Anh trai">Anh trai</option>
+                                                    <option value="Em trai">Em trai</option>
+                                                    <option value="Chị gái">Chị gái</option>
+                                                    <option value="Em gái">Em gái</option>
+                                                    <option value="Vợ">Vợ</option>
+                                                    <option value="Chồng">Chồng</option>
+                                                    <option value="Con">Con</option>
+                                                    <option value="Cô ruột">Cô ruột</option>
+                                                    <option value="Chú ruột">Chú ruột</option>
+                                                    <option value="Bác ruột">Bác ruột</option>
+                                                    <option value="Cậu ruột">Cậu ruột</option>
+                                                    <option value="Dì ruột">Dì ruột</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Nghề
+                                                nghiệp
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <input autocomplete="off" name="nghenghiep" onchange="OnchangeInput('user-nghenghiepnguoithan'); return false;" id="user-nghenghiepnguoithan" type="text" class="form-control" required>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">
+                                                Ngày sinh
+                                            </label>
+                                            <div class="col-sm-2">
+                                                <input autocomplete="off" name="birthday" onchange="OnchangeInput('user-ngaysinh'); return false;" id="user-ngaysinh" class="datetimepicker form-control edit-field"
+                                                       type="text" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Lý lịch chính
+                                                trị
+                                            </label>
+                                            <div class="col-sm-10">
+                                                <textarea name="lichsuchinhtri" onchange="OnchangeInput('user-lichsuchinhtri'); return false;" id="user-lichsuchinhtri" type="text" row="5"
+                                                          class="form-control"></textarea>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </form>
+                                    <div>
+                                        <button id="btn-savefamily"  onclick="processUpdateUser()" class="col-sm-2 col-form-label btn btn-primary">
+                                            <i class="ti-save"></i>
+                                        </button>
+                                    </div>
+                                    <div class="k tab-family" id="user-family">
+                                        <div class="k row-table">
+                                            <span class="k t tt-table-dt bold">STT</span>
+                                            <span class="k t tt-table-dt bold"> Họ tên</span>
+                                            <span class="k t tt-table-dt bold">Quan hệ</span>
+                                            <span class="k t tt-table-dt bold">Nghề nghiệp</span>
+                                            <span class="k t tt-table-dt bold">Lịch sử chính trị</span>
+                                            <span class="k t tt-table-dt bold">Cập nhật</span>
+
+                                        </div>
+                                    </div>
+
+                                    @*<div>
+            <button style="margin-top:30px" onclick="UpdateInfomation()" class="col-sm-2 col-form-label btn btn-primary">
+                Cập nhật thông tin
+            </button>
+        </div>*@
+                                    <!-- Basic Form Inputs card end -->
+                                    <!-- Input Grid card start -->
+                                    <!-- Page body end -->
+                                </div>
+                            </div>
+                            <!-- Main-body end -->
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Script{
+
+    <script>
+        try {
+            var fileid = @ViewBag.fileid;
+           
+        }
+        catch (er) {
+            alert("error");
+        }
+    </script>
+    <script src="~/js/user/family.js"></script>
+}
+

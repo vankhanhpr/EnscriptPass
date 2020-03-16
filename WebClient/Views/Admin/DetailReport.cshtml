@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "DetailReport";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/admin/addetailreport.css">
+}
+<div class="k  main-form">
+    <div class="k body-form" >
+        <span class="k t tittle-page">Tạo các báo cáo</span>
+        <button onclick="PrintElem('test')">Print</button>
+        <div class="k border-form-report-a4">
+            <div class="form-report-a4" id="test">
+                <span class="k t name-report">BÁO CÁO TĂNG GIẢM ĐẢNG VIÊN NĂM 2019</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+@section Script{
+    <script src="~/js/admin/addetailreport.js"></script>
+}
+

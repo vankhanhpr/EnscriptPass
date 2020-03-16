@@ -1,0 +1,639 @@
+﻿@import url("adconfig.css");
+
+:root {
+    --background-color: white;
+}
+
+@media only screen and (min-width:0) {
+    .body-form {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        background-color: var(--bg-main);
+    }
+    .t-note-dangbo{
+        color:var(--cl-text-bl);
+        font-weight:300;
+        text-align:left;
+    }
+    .f-search-ft {
+        border-radius: 4px;
+        border: 1px solid rgba(51,51,51,0.1);
+        background-color: var(--bg-white);
+    }
+    .search-ft {
+        width: auto;
+        border: none;
+    }
+    .select-option{
+        border:1px solid rgba(51,51,51,0.1);
+        border-radius:4px;
+        padding:2px 7px;
+        cursor:pointer;
+    }
+    .form-head {
+        width: 100%;
+        padding-top: 5px;
+        background-color: var(--background-color);
+    }
+
+    .title {
+        color: var(--cl-text-bl);
+        font-weight: 600;
+        text-align: left;
+        margin-top:2px;
+    }
+    .filter-by{
+        color:var(--cl-text-bl);
+        border:1px solid rgba(51,51,51,0.1);
+        padding:5px;
+        cursor:pointer;
+    }
+    .type-of-form{
+        color:var(--cl-text-bl);
+        text-align:left; 
+        padding:5px;
+    }
+
+    .main-form-item {
+        width: 100%;
+    }
+
+    .row-table {
+        width: 100%;
+        background-color: var(--background-color);
+    }
+
+    .tt-table {
+        width: 20%;
+        border-left: 1px solid rgba(51,51,51,0.1);
+        padding: 5px;
+        color: var(--cl-text-bl);
+        font-weight: 600;
+        text-align: left;
+        border: 1px solid rgba(51,51,51,0.1);
+    }
+
+    .tt-table-dt {
+        color: var(--cl-text-bl);
+        font-weight: 300;
+        text-align: left;
+        width: 20%;
+        border-left: 1px solid rgba(51,51,51,0.1);
+        border: 1px solid rgba(51,51,51,0.1);
+    }
+
+    .form-add-new {
+        width: 100%;
+        border: 1px solid rgba(51,51,51,0.1);
+    }
+
+    .item-left-form {
+        width: 33.3333%;
+    }
+
+    .left-text {
+        color: var(--cl-text-bl);
+        text-align: left;
+        font-weight: 300;
+        text-align:center;
+    }
+
+    .right-text {
+        color: var(--cl-text-bl);
+        text-align: left;
+        font-weight: 300;
+        border:1px  solid rgba(51,51,51,0.1);
+        border-radius:4px;
+    }
+    .name-file {
+        color: var(--cl-text-bl);
+        text-align: center;
+        width: 100%;
+    }
+    .form-add-file {
+        width: 70%;
+        padding: 5px;
+        border: 1px dashed rgba(51,51,51,0.2);
+        border-radius: 4px;
+        
+    }
+
+    .img-brower {
+        background-image: url(/images/admin/icon.svg);
+        background-repeat: no-repeat;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        cursor: pointer;
+        background-position: top;
+        width: 100%;
+        height: 30px;
+    }
+    .bnt-insert-form{
+        cursor:pointer;
+        padding:3px 5px;
+        position:relative;
+        float:right;
+        color:var(--cl-text-wt);
+        background-color:var(--bg-button);
+        border:1px solid rgba(51,51,51,0.1);
+        border-radius:4px;
+    }
+    .boder-err{
+        width:100%;
+        text-align:center;
+    }
+    .form-add-new {
+        background-color: var(--background-color);
+    }
+    .err-validate {
+        color: red;
+        width: auto;
+        text-align: center;
+        font-size: 12px;
+        display:inline-block;
+        position:relative;
+        margin-top:10px;
+        display:none;
+    }
+    
+    .modal-body{
+        width:100%;
+    }
+    .dl-sm-it{
+        width:100%;
+    }
+    .left-text {
+        color: var(--cl-text-bl);
+        font-weight: 300;
+        text-align: left;
+    }
+    .input-text {
+        color: var(--cl-text-bl);
+        font-weight: 300;
+        text-align: left;
+        border-radius:4px;
+        border:1px solid rgba(51,51,51,0.1);
+    }
+    .form-file-update {
+        color: var(--cl-text-bl);
+        font-weight: 300;
+        text-align: left;
+        border-radius: 4px;
+        border: 1px dashed rgba(51,51,51,0.2);
+    }
+    .name-file-update{
+        color:var(--cl-text-bl);
+        text-align:left;
+        font-weight:300;
+    }
+    .bnt-brower-update{
+        color:var(--cl-text-wt);
+        background-color:var(--bg-button);
+        cursor:pointer;
+        border-radius:4px;
+        border:1px solid rgba(51,51,51,0.1);
+        text-align:center;
+    }
+
+    .bnt-update {
+        color: var(--cl-text-wt);
+        width: 100%;
+        border: 1px solid rgba(51,51,51,0.1);
+        border-radius: 4px;
+        text-align: center;
+        background-color: var(--bg-button);
+        cursor: pointer;
+    }
+    .err-validate-update{
+        width:100%;
+        color:red;
+        font-size:12px;
+        text-align:center;
+        margin-bottom:10px;
+        display:none;
+    }
+    .fa-cogs, .fa-trash-o {
+        position: relative;
+        float: left;
+        cursor: pointer;
+        margin-left:5px;
+        color:var(--cl-text-bl);
+    }
+    .err-ip {
+        border: 1px solid rgba(255, 0, 0,0.4);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .title {
+        font-size: var(--fs-dt);
+        padding: 5px 5px 5px 0;
+    }
+
+    .main-form-item {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .tt-table {
+        font-size: var(--fs-dt);
+    }
+
+    .tt-table-dt {
+        font-size: var(--fs-dt);
+        padding: 5px;
+    }
+
+    .form-add-new {
+        padding: 10px;
+    }
+
+    .left-text {
+        width: 30%;
+        padding: 5px;
+        font-size: var(--fs-dt);
+    }
+
+    .right-text {
+        width: 70%;
+        padding: 7px;
+        font-size: var(--fs-dt);
+        min-height: 60px;
+    }
+
+    .name-file {
+    }
+
+    .bnt-insert-form {
+        font-size: var(--fs-dt);
+        margin-top: 5px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 20px;
+    }
+
+    .left-text {
+        width: 30%;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .input-text {
+        width: 70%;
+        padding: 5px;
+    }
+
+    .form-file-update {
+        width: 70%;
+        padding: 5px;
+    }
+
+    .bnt-update {
+        padding: 3px 5px;
+    }
+
+    .name-file-update {
+        width: 80%;
+        font-size: var(--fs-dt);
+    }
+
+    .bnt-brower-update {
+        width: 20%;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width:768px) {
+    .title {
+        font-size: var(--fs-dt);
+        padding: 5px 5px 5px 0;
+    }
+
+    .main-form-item {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .tt-table {
+        font-size: var(--fs-dt);
+    }
+
+    .tt-table-dt {
+        font-size: var(--fs-dt);
+        padding: 5px;
+    }
+
+    .form-add-new {
+        padding: 10px;
+    }
+
+    .left-text {
+        width: 30%;
+        padding: 5px;
+        font-size: var(--fs-dt);
+    }
+
+    .right-text {
+        width: 70%;
+        padding: 7px;
+        font-size: var(--fs-dt);
+        min-height: 60px;
+    }
+
+    .name-file {
+    }
+
+    .bnt-insert-form {
+        font-size: var(--fs-dt);
+        margin-top: 5px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 20px;
+    }
+
+    .left-text {
+        width: 30%;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .input-text {
+        width: 70%;
+        padding: 5px;
+    }
+
+    .form-file-update {
+        width: 70%;
+        padding: 5px;
+    }
+
+    .bnt-update {
+        padding: 3px 5px;
+    }
+
+    .name-file-update {
+        width: 80%;
+        font-size: var(--fs-dt);
+    }
+
+    .bnt-brower-update {
+        width: 20%;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .title {
+        font-size: var(--fs-dt);
+        padding:5px 5px  5px 0;
+    }
+
+    .main-form-item {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .tt-table {
+        font-size: var(--fs-dt);
+    }
+
+    .tt-table-dt {
+        font-size: var(--fs-dt);
+        padding: 5px;
+    }
+
+    .form-add-new {
+        padding: 10px;
+    }
+
+    .left-text {
+        width: 30%;
+        padding: 5px;
+        font-size: var(--fs-dt);
+    }
+
+    .right-text {
+        width: 70%;
+        padding: 7px;
+        font-size: var(--fs-dt);
+        min-height: 60px;
+    }
+
+    .name-file {
+    }
+
+    .bnt-insert-form {
+        font-size: var(--fs-dt);
+        margin-top: 5px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 20px;
+    }
+
+    .left-text {
+        width: 30%;
+        padding: 5px;
+        text-align:center;
+    }
+
+    .input-text {
+        width: 70%;
+        padding: 5px;
+    }
+
+    .form-file-update {
+        width: 70%;
+        padding: 5px;
+    }
+
+    .bnt-update {
+        padding: 3px 5px;
+    }
+
+    .name-file-update {
+        width: 80%;
+        font-size: var(--fs-dt);
+    }
+
+    .bnt-brower-update {
+        width: 20%;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width:1200px) {
+    .title {
+        font-size: var(--fs-dt);
+    }
+
+    .main-form-item {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .tt-table {
+        font-size: var(--fs-dt);
+    }
+
+    .tt-table-dt {
+        font-size: var(--fs-dt);
+        padding: 5px;
+    }
+
+    .form-add-new {
+        padding: 10px;
+    }
+
+    .left-text {
+        width: 30%;
+        padding: 5px;
+        font-size: var(--fs-dt);
+    }
+
+    .right-text {
+        width: 70%;
+        padding: 7px;
+        font-size: var(--fs-dt);
+        min-height: 60px;
+    }
+
+    .name-file {
+    }
+
+    .bnt-insert-form {
+        font-size: var(--fs-dt);
+        margin-top: 5px;
+    }
+
+    .dl-sm-it {
+        margin-bottom: 20px;
+    }
+
+    .left-text {
+        width: 30%;
+        padding: 5px;
+    }
+
+    .input-text {
+        width: 70%;
+        padding: 5px;
+    }
+
+    .form-file-update {
+        width: 70%;
+        padding: 5px;
+    }
+
+    .bnt-update {
+        padding: 3px 5px;
+    }
+
+    .name-file-update {
+        width: 80%;
+        font-size: var(--fs-dt);
+    }
+
+    .bnt-brower-update {
+        width: 20%;
+        font-size: 12px;
+    }
+} 
+
+@media only screen and (min-width:1200px) {
+    .title {
+        font-size: var(--fs-dt);
+    }
+    .form-head{
+        margin-top:10px;
+        margin-bottom:10px;
+        padding:5px;
+    }
+    .f-search-ft {
+        padding: 3px;
+        margin-left:20px;
+    }
+    .t-note-dangbo {
+        margin-left:30px;
+        margin-top:4px;
+        margin-right:3px;
+    }
+    .main-form-item {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .tt-table {
+        font-size: var(--fs-dt);
+    }
+
+    .tt-table-dt {
+        font-size: var(--fs-dt);
+        padding: 5px;
+        min-height:60px;
+    }
+
+    .form-add-new {
+        padding: 10px;
+       
+    }
+    .left-text {
+        width:30%;
+        padding:5px;
+        font-size:var(--fs-dt);
+    }
+    .right-text {
+        width: 70%;
+        padding: 7px;
+        font-size: var(--fs-dt);
+        min-height:60px;
+    }
+    
+    .name-file {
+    }
+    .bnt-insert-form {
+        font-size:var(--fs-dt);
+        margin-top:5px;
+    }
+    .dl-sm-it {
+        margin-bottom:20px;
+    }
+    .left-text {
+        width:30%;
+        padding:5px;
+    }
+
+    .input-text {
+        width: 70%;
+        padding: 5px;
+    }
+    .form-file-update {
+        width: 70%;
+        padding:5px;
+    }
+    .bnt-update{
+        padding:3px 5px;
+    }
+    .name-file-update {
+        width:80%;
+        font-size:var(--fs-dt);
+    }
+
+    .bnt-brower-update {
+        width: 20%;
+        font-size: 12px;
+    }
+    .small-row {
+        width: 15%;
+    }
+    .big-row{
+        width:30%;
+    }
+}

@@ -1,0 +1,208 @@
+﻿
+:root{
+    --fs-lg:16px;
+    --fs-bt:18px;
+}
+@media only screen and (min-width:0){
+    .container-fluid{
+        padding:0;
+    }
+    .header, .footer{
+        display:none;
+    }
+    .hd-left-body{
+        display:none;
+    }
+    .hd-right-body{
+        width:100%;
+    }
+    .form-login {
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 100vh;
+        /*background-image: linear-gradient(to bottom right, purple, pink);*/
+        background-image:url(/images/login/hcm1.jpg);
+        background-position:center;
+        background-repeat:no-repeat;
+        background-size:cover;
+    }
+    .body-login {
+        position: absolute;
+        width: 40vw;
+        height: 380px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: #f1ebde66;
+        border-radius: 4px;
+        padding: 15px 20px;
+    }
+    .logo-login {
+        text-align: center;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(/images/login/logologin.png);
+        width: 50%;
+        height: 110px;
+        position:relative;
+        display:inline-block;
+        top:0;
+        left:0;
+        right:0;
+        margin:auto;
+    }
+
+    .row-item {
+        width: 100%;
+        padding: 5px;
+        text-align:center;
+    }
+    .t-note{
+        color:var(--cl-text-bl);
+        text-align:left;
+        font-weight:600;
+    }
+    .input-text {
+        color: var(--cl-text-bl);
+        text-align: left;
+        border: 1px solid rgba(51,51,51,0.5);
+        border-radius: 4px;
+        background-color: #fbfdfd6b;
+    }
+    .bnt-login {
+        width: 100%;
+        border: 1px solid rgba(51,51,51,0.1);
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #0c5f5b;
+        color: var(--cl-text-wt);
+        text-align: center;
+    }
+    .validate-err{
+        width:100%;
+        color:red;
+        font-size:14px;
+        text-align:center;
+        margin-top:5px;
+        display:none;
+    }
+    .bd-red{
+        border:1px solid rgba(255,0,0,0.4 );
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .t-note {
+        font-size: var(--fs-lg);
+        width: 30%;
+        padding: 5px;
+    }
+
+    .input-text {
+        width: 70%;
+        padding: 7px 10px;
+    }
+
+    .row-item {
+        margin-bottom: 10px;
+    }
+
+    .bnt-login {
+        font-size: var(--fs-bt);
+        padding: 5px 0;
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width:768px) {
+    .t-note {
+        font-size: var(--fs-lg);
+        width: 30%;
+        padding: 5px;
+    }
+
+    .input-text {
+        width: 70%;
+        padding: 7px 10px;
+    }
+
+    .row-item {
+        margin-bottom: 10px;
+    }
+
+    .bnt-login {
+        font-size: var(--fs-bt);
+        padding: 5px 0;
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .t-note {
+        font-size: var(--fs-lg);
+        width: 30%;
+        padding: 5px;
+    }
+
+    .input-text {
+        width: 70%;
+        padding: 7px 10px;
+    }
+
+    .row-item {
+        margin-bottom: 10px;
+    }
+
+    .bnt-login {
+        font-size: var(--fs-bt);
+        padding: 5px 0;
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width:1200px) {
+    .t-note {
+        font-size: var(--fs-lg);
+        width: 30%;
+        padding: 5px;
+    }
+
+    .input-text {
+        width: 70%;
+        padding: 7px 10px;
+    }
+
+    .row-item {
+        margin-bottom: 10px;
+    }
+
+    .bnt-login {
+        font-size: var(--fs-bt);
+        padding: 5px 0;
+        margin-top: 15px;
+    }
+} 
+
+@media only screen and (min-width:1200px){
+    .t-note {
+        font-size:var(--fs-lg);
+        width:30%;
+        padding:5px;
+    }
+    .input-text{
+        width:70%;
+        padding:7px 10px;
+    }
+    .row-item {
+        margin-bottom:10px;
+    }
+    .bnt-login {
+       font-size:var(--fs-bt);
+       padding: 5px 0;
+       margin-top:15px;
+    }
+}

@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewData["Title"] = "ChiBo";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/admin/adchibo.css">
+}
+
+<div class="k main-form">
+    <div class="k body-form">
+        <div class="k f-add-cb">
+            <span class="k t t-name-cb">Thông tin Chi Bộ</span>
+
+            <div class="k f-search-ft">
+                <input class="k search-ft" id="search-box" onkeyup="searchChiBo(bindingChiBo)" type="text">
+                <i class="fa fa-search bnt-search" aria-hidden="true"></i>
+            </div>
+
+            <span class="k t bnt-add-cb" data-toggle="modal" data-target="#modalinsertchibo" onclick="getDangBo(bindingChiBoToFilter)"> + Thêm mới</span>
+            <select class="dl-ft-db" id="ft-db">
+                @*<option value="0">Đảng bộ trung tâm công nghệ thông tin</option>
+            <option value="1">Đảng bộ gì đó</option>*@
+            </select>
+        </div>
+
+        <div class="k f-inf" id="f-inf-chb">
+            <div class="k row-table-main">
+                <span class="k t tt-table">Chi bộ</span>
+                <span class="k t tt-table">Ngày thành lập</span>
+                <span class="k t tt-table">Trạng thái</span>
+                <span class="k t tt-table">Cập nhật</span>
+            </div>
+            @*<div class="k row-table">
+                <span class="k t tt-table-dt">Trung tâm công nghệ thông tin</span>
+                <span class="k t tt-table-dt">12/12/2012</span>
+                <span class="k t tt-table-dt">Hoạt động</span>
+                <div class="k t tt-table-dt">
+                    <i class="fa fa-cogs" data-toggle="modal" data-target="#modalupdatechibo"></i>
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </div>
+            </div>*@
+
+
+        </div>
+    </div>
+
+
+    @*edit chi bo*@
+    <div class="modal fade" id="modalupdatechibo" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Cập nhật Chi bộ</h4>
+                </div>
+                <div class="k modal-body">
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-cb">Chi bộ: </span>
+                        <input class="k dl-input-cb" id="ip-name-db-ud" type="text" />
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-cb">Trực thuộc: </span>
+                        <select class="k dl-sl-cb" id="sl-db-att-ud">
+                            @*<option value="0">Không trực thuộc</option>*@
+                        </select>
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-cb" id="sl-db-active">Trạng thái: </span>
+                        <select class="k dl-sl-cb"id="sl-active-chibo">
+                            <option value="0">Hoạt động</option>
+                            <option value="1">Khóa</option>
+                        </select>
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-cb" id="sl-db-active">Ngày thành lập: </span>
+                        <div class="form-group">
+                            <div class='input-group date' id='datepicker-udcb'>
+                                <input type='text' class="form-control" id="day-update-cb" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    @*<span class="k dl-bnt-save" onclick="updateChiBo()">Cập nhật</span>*@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="k btn btn-default" data-dismiss="modal">
+                        Đóng
+                    </button>
+                    <span class="k dl-bnt-save" onclick="updateChiBo()">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        Cập nhật
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    @*add new chi bo*@
+    <div class="modal fade" id="modalinsertchibo" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Thêm mới Chi bộ</h4>
+                </div>
+                <div class="k modal-body">
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-cb">Chi bộ: </span>
+                        <input class="k dl-input-cb" id="ip-name-cb" type="text" />
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-cb">Trực thuộc: </span>
+                        <select class="k dl-sl-cb" id="sl-db-att">
+                            @*<option value="0">Không trực thuộc</option>*@
+                        </select>
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-cb" id="sl-db-active">Trạng thái: </span>
+                        <select class="k dl-sl-cb">
+                            <option value="0">Hoạt động</option>
+                            @*<option value="1">Khóa</option>*@
+                        </select>
+                    </div>
+
+                    <div class="k dl-sm-it">
+                        <span class="k t dl-name-cb" id="sl-db-active">Ngày thành lập: </span>
+                        <div class="form-group">
+                            <div class='input-group date' id='datepicker-addnew'>
+                                <input type='text' class="form-control" id="day-create-cb" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    @*<span class="k dl-bnt-save" onclick="insertChiBo()">Thêm mới</span>*@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="k btn btn-default" data-dismiss="modal">
+                        Đóng
+                    </button>
+                    <span class="k dl-bnt-save" onclick="insertChiBo()">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        Thêm mới
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+@section Script{
+    <script src="~/js/admin/adchibo.js"></script>
+}
+

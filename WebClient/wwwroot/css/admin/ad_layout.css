@@ -1,0 +1,394 @@
+﻿@import url("/css/admin/adconfig.css");
+
+:root {
+    --h-heght-hd: 95px;
+    --h-bg-cl-hd: #fffce0;
+    --h-height-avt: 85px;
+    --h-width-avt: 180px;
+    --h-color-hd: red;
+    --h-fs-hd-page: 20px;
+    --h-fs-hd: 30px;
+    --fs-hover: 17px;
+    --cl-hover: white;
+    --color-text-hover:red;
+    --h-color-menu: red;
+}
+
+@media only screen and (min-width:0) {
+    html, body {
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hd-main {
+        width: 100%;
+        height: var(--h-heght-hd);
+        background-color: var(--h-bg-cl-hd);
+    }
+
+    .hd-avt {
+        background-image: url(/images/admin/logo2.gif);
+    }
+
+    .h-f-tt {
+        width: 100%;
+    }
+
+    .h-t-page-ad {
+        color: var(--h-color-hd);
+        width: 100%;
+        font-weight: 600;
+        letter-spacing: -1px;
+    }
+
+    .h-t-namepage {
+        color: var(--h-color-hd);
+        width: 100%;
+        font-weight: bold;
+    }
+
+    .hd-top {
+        width: 100%;
+        background-color: rgba(51,51,51,0.1);
+        margin-bottom: 2px;
+        text-align: center;
+    }
+
+    .hd-ic-home {
+        color: var(--h-color-hd);
+        font-size: 20px;
+        margin-left: 10px;
+        padding: 5px;
+    }
+
+    .hd-bnt-logout {
+        color: var(--cl-text-bl);
+        position: absolute;
+        bottom: -27px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: rgb(255, 252, 224);
+        text-align: center;
+        z-index: 999;
+        border-radius: 4px;
+        padding: 4px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+        display: none;
+    }
+
+        .hd-bnt-logout:hover {
+            font-weight: 600;
+        }
+
+        .hd-bnt-logout:after {
+            content: "";
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            top: -4px;
+            right: 15px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            background: rgb(255, 252, 224);
+            -webkit-box-shadow: -1px -1px 0 #dfdfdf;
+            box-shadow: -1px -1px 0 #dfdfdf;
+            z-index: -1;
+        }
+
+    .hd-fomr-logout {
+        position: relative;
+        float: right;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .hd-text-admin {
+        color: var(--cl-text-bl);
+        font-size: 16px;
+        margin-right: 5px;
+    }
+
+    .hd-ic-admin {
+        font-size: 18px;
+        position: relative;
+        float: left;
+        margin-right: 10px;
+        margin-top: 3px;
+    }
+
+    .hd-fomr-logout:hover .hd-bnt-logout {
+        display: block;
+    }
+
+    .hd-text-run {
+        width: 40%;
+        position: relative;
+        float: none;
+        display: inline-block;
+        padding: 4px;
+        text-transform: uppercase;
+        color: red;
+        font-weight: 600;
+    }
+
+    .hd-boby {
+        width: 100%;
+    }
+
+    .hd-left-body {
+        width: 15%;
+        height: 100vh;
+        background-color: var(--cl-dt-wt);
+    }
+
+    .hd-right-body {
+        width: 85%;
+        background-color: var(--bg-main);
+    }
+
+    .hd-text-menu-main {
+        color: var(--cl-text-wt);
+        text-align: left;
+        padding: 5px;
+        width: 100%;
+        cursor: pointer;
+        background-color: var(--h-color-menu);
+        margin-top: 5px;
+        font-weight: 600;
+        border: 1px solid rgba(51,51,51,0.1);
+        font-size: var(--fs-dt);
+    }
+    .hd-id-start{
+        color:white;
+        margin-right:5px;
+    }
+    .hd-text-menu {
+        border: 1px solid rgba(51,51,51,0.1);
+        background-color: var(--h-color-menu);
+        width: 100%;
+        text-align: left;
+        color: white;
+        padding: 5px;
+        cursor: pointer;
+        padding-left: 20px;
+        font-size: var(--fs-dt);
+    }
+        .hd-text-menu:hover, .hd-text-menu:hover .hd-id-start {
+            background-color: white !important;
+            color: red;
+        }
+        .hd-ic-dot {
+            font-size: 10px;
+            color: red;
+            margin-left: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    /*------------footer---------------*/
+    .h-f-ft {
+        width: 100%;
+        background-color: var(--h-bg-cl-hd);
+        text-align: center;
+    }
+
+    .h-t-ft {
+        width: 100%;
+        text-align: center;
+    }
+
+    .lds-ring {
+        z-index: 3;
+        display: inline-block;
+        position: absolute;
+        height: 100%;
+        background-color: rgba(51,51,51,0.3);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+        .lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 51px;
+            height: 51px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border: 6px solid #fff;
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: #fff transparent transparent transparent;
+        }
+
+            .lds-ring div:nth-child(1) {
+                animation-delay: -0.45s;
+            }
+
+            .lds-ring div:nth-child(2) {
+                animation-delay: -0.3s;
+            }
+
+            .lds-ring div:nth-child(3) {
+                animation-delay: -0.15s;
+            }
+
+    @keyframes lds-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hd-main {
+        padding: 5px 3%;
+    }
+
+    .hd-avt {
+        height: var(--h-height-avt);
+        width: var(--h-width-avt);
+    }
+
+    .h-f-tt {
+        width: 60%;
+    }
+
+    .h-t-page-ad {
+        font-size: var(--h-fs-hd-page);
+        margin-top: 15px;
+    }
+
+    .h-t-namepage {
+        font-size: var(--h-fs-hd);
+    }
+
+    .h-f-ft {
+        padding: 10px 0;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width:768px) {
+    .hd-main {
+        padding: 5px 3%;
+    }
+
+    .hd-avt {
+        height: var(--h-height-avt);
+        width: var(--h-width-avt);
+    }
+
+    .h-f-tt {
+        width: 60%;
+    }
+
+    .h-t-page-ad {
+        font-size: var(--h-fs-hd-page);
+        margin-top: 15px;
+    }
+
+    .h-t-namepage {
+        font-size: var(--h-fs-hd);
+    }
+
+    .h-f-ft {
+        padding: 10px 0;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .hd-main {
+        padding: 5px 3%;
+    }
+
+    .hd-avt {
+        height: var(--h-height-avt);
+        width: var(--h-width-avt);
+    }
+
+    .h-f-tt {
+        width: 60%;
+    }
+
+    .h-t-page-ad {
+        font-size: var(--h-fs-hd-page);
+        margin-top: 15px;
+    }
+
+    .h-t-namepage {
+        font-size: var(--h-fs-hd);
+    }
+
+    .h-f-ft {
+        padding: 10px 0;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width:1200px) {
+    .hd-main {
+        padding: 5px 3%;
+    }
+
+    .hd-avt {
+        height: var(--h-height-avt);
+        width: var(--h-width-avt);
+    }
+
+    .h-f-tt {
+        width: 60%;
+    }
+
+    .h-t-page-ad {
+        font-size: var(--h-fs-hd-page);
+        margin-top: 15px;
+    }
+
+    .h-t-namepage {
+        font-size: var(--h-fs-hd);
+    }
+
+    .h-f-ft {
+        padding: 10px 0;
+    }
+}
+
+@media only screen and (min-width:1200px) {
+    .hd-main {
+        padding: 5px 3%;
+    }
+
+    .hd-avt {
+        height: var(--h-height-avt);
+        width: var(--h-width-avt);
+    }
+
+    .h-f-tt {
+        width: 60%;
+    }
+
+    .h-t-page-ad {
+        font-size: var(--h-fs-hd-page);
+        margin-top: 15px;
+    }
+
+    .h-t-namepage {
+        font-size: var(--h-fs-hd);
+    }
+
+    .h-f-ft {
+        padding: 10px 0;
+    }
+    /*------------footer---------------*/
+}

@@ -1,0 +1,17 @@
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\bin\Release\netcoreapp2.1\WebApi.deps.json
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\bin\Release\netcoreapp2.1\WebApi.runtimeconfig.json
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\bin\Release\netcoreapp2.1\WebApi.runtimeconfig.dev.json
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\bin\Release\netcoreapp2.1\WebApi.dll
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\bin\Release\netcoreapp2.1\WebApi.pdb
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\bin\Release\netcoreapp2.1\AdhererClassLib.dll
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\bin\Release\netcoreapp2.1\AdhererClassLib.pdb
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\obj\Release\netcoreapp2.1\WebApi.csprojAssemblyReference.cache
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\obj\Release\netcoreapp2.1\WebApi.csproj.CoreCompileInputs.cache
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\obj\Release\netcoreapp2.1\WebApi.RazorAssemblyInfo.cache
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\obj\Release\netcoreapp2.1\WebApi.RazorAssemblyInfo.cs
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\obj\Release\netcoreapp2.1\WebApi.AssemblyInfoInputs.cache
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\obj\Release\netcoreapp2.1\WebApi.AssemblyInfo.cs
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\obj\Release\netcoreapp2.1\WebApi.RazorTargetAssemblyInfo.cache
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\obj\Release\netcoreapp2.1\WebApi.csproj.CopyComplete
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\obj\Release\netcoreapp2.1\WebApi.dll
+F:\ASP.NET\ADHERER\source\Adherer\WebApi\obj\Release\netcoreapp2.1\WebApi.pdb

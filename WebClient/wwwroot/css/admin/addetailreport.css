@@ -1,0 +1,47 @@
+﻿@import url("adconfig.css");
+
+:root{
+
+}
+@media only screen and (min-width:0){
+    .body-form{
+        background-color:var(--bg-main);
+        width:100%;
+    }
+    .tittle-page {
+        color: var(--cl-text-bl);
+        text-align: left;
+        font-weight: 300;
+        width: auto;
+    }
+    .border-form-report-a4{
+        width:100%;
+        text-align:center;
+    }
+    .form-report-a4{
+        width:21cm;
+        height:29.7cm;
+        background-color:white;
+        text-align:center;
+        position:relative;
+        float:none;
+        display:inline-block;
+        padding:2cm 3cm 2cm 2cm;
+
+    }
+    .name-report{
+        width:100%;
+        text-align:center;
+        font-size:22px;
+    }
+}
+@media only screen and (min-width:1200px){
+    .body-form {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .tittle-page {
+        font-size: var(--fs-tt);
+        padding: 3px 0;
+    }
+}

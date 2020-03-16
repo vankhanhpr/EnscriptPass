@@ -1,0 +1,290 @@
+﻿@import url("adconfig.css");
+
+:root{
+    --background-item:white;
+    --color-file:forestgreen;
+}
+
+@media only screen and (min-width:0){
+    .body-form{
+        width:100%;
+        padding-left:5%;
+        padding-right:5%;
+        background-color:var(--bg-main);
+        padding-top:10px;
+    }
+    .tab-title {
+        width: 100%;
+        background-color: var(--background-item);
+        padding-top:5px;
+    }
+    .t-note-dangbo {
+        color: var(--cl-text-bl);
+        font-weight: 300;
+        text-align: left;
+    }
+    .select-option {
+        border: 1px solid rgba(51,51,51,0.1);
+        border-radius: 4px;
+        padding: 2px 7px;
+        cursor: pointer;
+    }
+    .t-title {
+        width: auto;
+        padding: 2px 2px;
+        color: var(--cl-text-bl);
+        font-weight:600;
+    }
+    .bnt-add-new{
+        color:var(--cl-text-wt);
+        font-weight:300;
+        text-align:left;
+        position:relative;
+        float:right;
+        background-color:var(--bg-button);
+        padding:3px 5px;
+        border-radius:4px;
+        border:1px solid rgba(51,51,51,0.1);
+        cursor:pointer;
+    }
+    .body-item {
+        width: 100%;
+        padding: 3px 2px;
+        background-color: var(--background-item);
+    }
+    .item-living {
+        width: 100%;
+        border-radius: 4px;
+        border: 1px solid rgba(51,51,51,0.1);
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+    }
+    .t-living{
+        width:100%;
+        font-weight:600;
+        color:var(--cl-text-bl);
+    }
+    .t-time{
+        color:var(--cl-text-bl);
+        font-weight:400;
+        width:100%;
+    }
+    .note-living {
+        width: 100%;
+        color: var(--cl-text-bl);
+        font-weight: 300;
+    }
+    .f-edit-file{
+        width:100%;
+    }
+    .file-close {
+        color: forestgreen;
+        width: auto;
+        text-align: right;
+        font-weight: 400;
+        cursor: pointer;
+        position: relative;
+        float: right;
+    }
+    .fa-wrench {
+        position: relative;
+        float: right;
+        border: 1px solid rgba(51,51,51,0.1);
+        padding: 3px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 4px;
+    }
+    .fa-trash-o {
+        position: relative;
+        float: left;
+        border: 1px solid rgba(51,51,51,0.1);
+        padding: 3px 5px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 4px;
+    }
+    .modal-body {
+        width: 100%;
+    }
+    .dl-sm-it{
+        width:100%;
+    }
+    .dl-name-fml {
+        color: var(--cl-text-bl);
+        font-weight: 300;
+        text-align: left;
+    }
+    .dl-input-fml {
+        color: var(--cl-text-bl);
+        font-weight: 300;
+        text-align: left;
+        border:1px solid rgba(51,51,51,0.1);
+        border-radius:4px;
+    }
+    .file-attach {
+        color: var(--color-file);
+        font-weight: 300;
+        text-align: left;
+        border: 1px dashed rgba(51,51,51,0.1);
+        border-radius: 4px;
+    }
+    .err-validate {
+        color: red;
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+        display: none;
+    }
+    .bnt-save-add-new {
+        color: var(--cl-text-bl);
+        border: 1px solid rgba(51,51,51,0.1);
+        float: right;
+        padding: 3px 5px;
+        border-radius: 4px;
+        background-color: var(--bg-button);
+        cursor: pointer;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+    }
+    .brower{
+        position:relative;
+        float:right;
+        border:1px solid rgba(51,51,51,0.1);
+        border-radius:4px;
+        padding:2px 5px;
+        cursor:pointer;
+        font-size:12px;
+    }
+    .err-ip {
+        border: 1px solid rgba(255, 0, 0,0.4);
+    }
+    .row-table {
+        width: 100%;
+        background-color: var(--background-color);
+    }
+    .tt-table {
+        width: 20%;
+        border-left: 1px solid rgba(51,51,51,0.1);
+        padding: 5px;
+        color: var(--cl-text-bl);
+        font-weight: 600;
+        text-align: left;
+        border: 1px solid rgba(51,51,51,0.1);
+    }
+    .tt-table-dt {
+        color: var(--cl-text-bl);
+        font-weight: 300;
+        text-align: left;
+        width: 20%;
+        border-left: 1px solid rgba(51,51,51,0.1);
+        border: 1px solid rgba(51,51,51,0.1);
+    }
+    .fa-cogs {
+        position: relative;
+        float: left;
+        border: 1px solid rgba(51,51,51,0.1);
+        padding: 3px;
+        border-radius: 4px;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+    .dl-bnt-save {
+        color: var(--cl-text-bl);
+        border: 1px solid rgba(51,51,51,0.1);
+        float: right;
+        padding: 3px 5px;
+        border-radius: 4px;
+        background-color: var(--bg-button);
+        cursor: pointer;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+        width: auto;
+        padding: 6px 12px;
+        text-align: center;
+        font-weight: 600;
+        margin-right: 5px;
+    }
+    .bnt-close-form {
+        float: right;
+        margin-top: 5px
+    }
+    .t-nodata {
+        color: var(--cl-text-bl);
+        width: 100%;
+        font-size: var(--fs-dt);
+        text-align: center;
+        padding: 5px;
+        border: 1px solid rgba(51,51,51,0.1);
+        margin-bottom: 10px;
+    }
+}
+@media only screen and (min-width:1200px){
+    .t-title {
+       font-size:var(--fs-dt);
+       margin-bottom:10px;
+    }
+    .item-living{
+        min-height:100px;
+        padding:10px;
+        margin-bottom:15px;
+    }
+    .t-time {
+        font-size:var(--fs-dt);
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    .t-note-dangbo {
+        margin-left: 30px;
+        margin-top: 4px;
+        margin-right: 3px;
+    }
+    .t-living {
+        font-size:var(--fs-tt);
+    }
+    .note-living {
+        font-size:var(--fs-dt);
+    }
+    .file-close {
+       font-size:var(--fs-tt);
+    }
+    .bnt-add-new{
+        margin-right:10px;
+    }
+    .dl-sm-it {
+        margin-bottom:10px;
+    }
+    .dl-name-fml {
+        font-size:var(--fs-dt);
+        width:30%;
+    }
+    .dl-input-fml {
+        width:70%;
+        padding:5px 0;
+    }
+    .file-attach {
+        font-size:var(--fs-dt);
+        width:70%;
+        padding:5px;
+    }
+    .tt-table {
+        font-size: var(--fs-dt);
+    }
+    .small-row {
+        width: 15%;
+    }
+    .big-row {
+        width: 30%;
+    }
+    .tt-table-dt {
+        font-size: var(--fs-dt);
+        padding: 5px;
+        min-height: 60px;
+    }
+    .dl-bnt-save {
+        padding: 5px;
+        font-size: var(--fs-dt);
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+}

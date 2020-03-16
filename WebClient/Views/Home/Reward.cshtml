@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "Reward";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/user/customabroad.css">
+}
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h1>Hồ sơ Khen thưởng</h1>
+                                    <form class="needs-validation mode" id="user-thongtinkhenthuong" novalidate>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Loại khen thưởng
+                                            </label>
+                                            <div class="col-sm-4">
+                                                <input autocomplete="off" id="user-noidung" name="noidung" type="text" onchange="OnchangeInput('user-noidung'); return false;" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Thời gian khen thưởng</label>
+                                            <div class="col-sm-2">
+                                                <input onchange="OnchangeInput('user-daycreate'); return false;" autocomplete="off" name="daycreate" id="user-daycreate"
+                                                       class="datetimepicker form-control" type="text"
+                                                       required>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">Đơn vị khen thưởng</label>
+                                            <div class="col-sm-4">
+                                                <input autocomplete="off" id="user-donvi" name="donvi" onchange="OnchangeInput('user-donvi'); return false;" type="text" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Nội dung khen thưởng
+                                            </label>
+                                            <div class="col-sm-10">
+                                                <textarea autocomplete="off" id="user-ghichu" onchange="OnchangeInput('user-ghichu'); return false;" name="ghichu" type="text" class="form-control" required></textarea>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                    <div>
+                                        <button style="margin-top:30px" onclick="processUpdateUser()" class="col-sm-2 col-form-label btn btn-primary">
+                                            <i class="ti-save"></i>
+                                        </button>
+                                    </div>
+                                    <div class="k f-inf" id="user-bonus">
+                                        <div class="k row-table">
+                                            <span class="k t tt-table">STT</span>
+                                            <span class="k t tt-table">Khen thưởng</span>
+                                            <span class="k t tt-table">Thời gian</span>
+                                            <span class="k t tt-table">Đơn vị</span>
+                                            <span class="k t tt-table">Ghi chú</span>
+                                            <span class="k t tt-table">Cập nhật</span>
+                                        </div>
+                                        @*item here*@
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- Main-body end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Script{
+
+    <script>
+        try {
+            var fileid = (@ViewBag.fileid) ?@ViewBag.fileid: null;
+
+        }
+        catch (er) {
+            alert("error");
+        }
+    </script>
+    <script src="~/js/user/bonus.js"></script>
+}
+

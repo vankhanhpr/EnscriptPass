@@ -1,0 +1,206 @@
+﻿
+@{
+    ViewData["Title"] = "NewAbroad";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/admin/adtoabroad.css">
+}
+
+<div class="k body-form">
+    <div class="k f-add-abroad">
+        <span class="k t t-name-abroad">Khai báo đi nước ngoài</span>
+        <span class="k t t-note-dangbo">Đảng bộ:</span>
+        <select class="k t select-option" id="sl-dangbo"></select>
+        <span class="k t t-note-dangbo">Chi bộ:</span>
+        <select class="k t select-option" id="sl-chibo">
+            @*<option value="">Trung tâm CNTT</option>*@
+        </select>
+        <span class="t bnt-add-abroad" data-toggle="modal" onclick="getUserByCb()" data-target="#modalinsertabroad">
+            + Thêm mới
+        </span>
+        <div class="k tab-filte">
+            <span class="k t t-form-day">Từ ngày: </span>
+            <div class="k form-datetime">
+                <div class="form-group">
+                    <div class='input-group date' id='datepicker-startday'>
+                        <input type='text' class="form-control" id="starday" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <span class="k t t-form-day">đến ngày: </span>
+            <div class="k form-datetime">
+                <div class="form-group">
+                    <div class='input-group date' id='datepicker-endday'>
+                        <input type='text' class="form-control" id="endday" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="k f-search-ft">
+                <input class="k search-ft" id="search-box" onkeyup="filterByBox()" type="text">
+                <i class="fa fa-search bnt-search" aria-hidden="true"></i>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="k f-inf" id="form-item-abroad">
+        <div class="k row-item row-item-main">
+            <span class="k t text-item small-item item-main">STT</span>
+            <span class="k t text-item small-item item-main">Mã ĐV</span>
+            <span class="k t text-item big-item item-main">Tên ĐV</span>
+            <span class="k t text-item item item-main">Ngày đi</span>
+            <span class="k t text-item item item-main">Ngày về</span>
+            <span class="k t text-item big-item item-main">Nơi đến</span>
+            <span class="k t text-item small-item item-main">Cập nhật</span>
+        </div>
+        <span class="k t t-nodata" id="tab-nodata">KHÔNG CÓ DỮ LIỆU</span>
+        @*<div class="k row-item">
+            <span class="k t text-item small-item">1</span>
+            <span class="k t text-item small-item">Lh012345</span>
+            <span class="k t text-item big-item">Nguyen Khang</span>
+            <span class="k t text-item item">12/12/2019</span>
+            <span class="k t text-item item">12/12/2019</span>
+            <span class="k t text-item big-item">Thich thi di</span>
+            <span class="k t text-item small-item">
+                <i class="fa fa-trash-o ic-font" onclick="" aria-hidden="true"></i>
+                <i class="fa fa-pencil-square-o ic-font" onclick="" data-toggle="modal" data-target="#modalupdatedesciption"></i>
+            </span>
+        </div>*@
+        @*item here*@
+    </div>
+
+    @*add new to abroad*@
+    <div class="modal fade" id="modalinsertabroad" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Khai báo mới</h4>
+                </div>
+                <div class="k modal-body">
+                    <div class="k dl-sm-it">
+                        <span class="k t item-left">Đảng viên: </span>
+                        <select class="k dl-sl-fml fstdropdown-select" id="sl-user"></select>
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t item-left">Nơi đi: </span>
+                        <input class="k input-right" id="positionto" type="text" />
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t item-left">Ngày đi: </span>
+                        <div class="form-group">
+                            <div class='input-group date' id='datepicker-daytogo'>
+                                <input type='text' class="form-control" id="daytogo" onkeypress="getValue()" onkeyup="setValue()" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t item-left">Ngày về: </span>
+                        <div class="form-group">
+                            <div class='input-group date' id='datepicker-daytoreturn'>
+                                <input type='text' class="form-control" id="daytoreturn" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="k dl-sm-it">
+                        <span class="k t item-left">Lý do: </span>
+                        <textarea class="k input-right" id="reasion" type="text"></textarea>
+                    </div>
+                    <span class="k t err-validate" id="err-validate-insert">**Vui lòng điền đầy đủ thông tin</span>
+
+                    @*<span class="k bnt-insert-abroad" onclick="validateInsertForm()">Thêm mới</span>*@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="k btn btn-default bnt-close-form" data-dismiss="modal">
+                        Đóng
+                    </button>
+                    <span class="k dl-bnt-save" onclick="validateInsertForm()">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        Cập nhật
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @*update to abroad*@
+    <div class="modal fade" id="modalupdateabroad" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Cập nhật thông tin</h4>
+                </div>
+                <div class="k modal-body">
+                    <div class="k dl-sm-it">
+                        <span class="k t item-left">Nơi đi: </span>
+                        <input class="k input-right" id="positiontoupdate" type="text" />
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t item-left">Ngày đi: </span>
+                        <div class="form-group">
+                            <div class='input-group date' id='datepicker-daytogo1'>
+                                <input type='text' class="form-control" id="daytogoupdate" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="k dl-sm-it">
+                        <span class="k t item-left">Ngày về: </span>
+                        <div class="form-group">
+                            <div class='input-group date' id='datepicker-daytoreturn1'>
+                                <input type='text' class="form-control" id="daytoreturnupdate" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="k dl-sm-it">
+                        <span class="k t item-left">Lý do: </span>
+                        <textarea class="k input-right" id="reasionupdate" type="text"></textarea>
+                    </div>
+                    <span class="k t err-validate" id="err-validate-update">**Vui lòng điền đầy đủ thông tin</span>
+
+                    @*<span class="k bnt-insert-abroad" onclick="validateUpdateForm()">Cập nhật</span>*@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="k btn btn-default bnt-close-form" data-dismiss="modal">
+                        Đóng
+                    </button>
+                    <span class="k dl-bnt-save" onclick="validateUpdateForm()">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        Cập nhật
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Script{
+    <script type="text/javascript" src="~/js/admin/adnewabroad.js"></script>
+}
+

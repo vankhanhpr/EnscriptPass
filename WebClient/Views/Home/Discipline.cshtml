@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewData["Title"] = "Discipline";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/user/Discipline.css">
+}
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Chọn hình đại diện</h4>
+                <button type="button" id="btnclose" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="custom-file mb-3">
+                <input type="file" class="custom-file-input" id="customFile" name="filename" accept="image/*">
+                <label class="custom-file-label" for="customFile">Chọn ảnh đại diện</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h1>Hồ sơ kỉ luật</h1>
+                                    @*<form class="needs-validation mode" id="user-thongtinkiluat" novalidate>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Loại kỉ luật
+                                            </label>
+                                            <div class="col-sm-4">
+                                                <input autocomplete="off" id="user-noidungkiluat" name="noidungkiluat" type="text" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Thời gian ki luật</label>
+                                            <div class="col-sm-3">
+                                                <input autocomplete="off" name="daycreatekiluat" id="user-daycreatekiluat"
+                                                       class="datetimepicker form-control" type="text"
+                                                       required>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">Đơn vị kỉ luật</label>
+                                            <div class="col-sm-4">
+                                                <input autocomplete="off" id="user-donvikiluat" name="donvikiluat" type="text" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">
+                                                Nội dung kỉ luật
+                                            </label>
+                                            <div class="col-sm-5">
+                                                <textarea autocomplete="off" id="user-ghichukiluat" name="ghichukiluat" type="text" class="form-control" required></textarea>
+                                            </div>
+                                        </div>
+
+                                    </form>*@
+                                    <div class="k f-inf" id="user-discipline">
+                                        <div class="k row-table">
+                                            <span class="k t tt-table">STT</span>
+                                            <span class="k t tt-table">Kỉ luật</span>
+                                            <span class="k t tt-table">Thời gian</span>
+                                            <span class="k t tt-table">Đơn vị</span>
+                                            <span class="k t tt-table">Ghi chú</span>
+                                        </div>
+                                        @*item here*@
+                                    </div>
+                                    @*<div>
+                                        <button style="margin-top:30px" onclick="CreateDataDiscipline()" class="col-sm-2 col-form-label btn btn-primary">
+                                            Lưu
+                                        </button>
+                                    </div>*@
+                                </div>
+                            </div>
+                            <!-- Main-body end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Script{
+
+    <script>
+        try {
+            var fileid = (@ViewBag.fileid) ?@ViewBag.fileid: null;
+
+        }
+        catch (er) {
+            alert("error");
+        }
+    </script>
+    <script src="~/js/user/discipline.js"></script>
+}
+

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+@section Css{
+    <link rel="stylesheet" type="text/css" href="~/css/login/login.css">
+}
+<div class="main-form">
+    <div class="k form-login">
+        <div class="body-login">
+            <form>
+                <div class="k row-item">
+                    <div class="logo-login"></div>
+                </div>
+                <div class="k row-item">
+                    <span class="k t t-note">Mã Đảng viên: </span>
+                    <input class="k input-text" id="t-madv" type="text" />
+                </div>
+                <div class="k row-item">
+                    <span class="k t t-note">Mật khẩu: </span>
+                    <input class="k input-text" id="t-password" type="password" onkeypress="return runScript(event)" />
+                    <span class="k validate-err">**Dữ liệu nhập chưa đúng vui lòng kiểm tra lại</span>
+                </div>
+                <div class="k row-item">
+                    <span class="k bnt-login" onclick="login()">Đăng nhập</span>
+                </div>
+            </form>  
+        </div>
+    </div>
+</div>
+
+@section Script{
+    <script src="~/js/login/login.js"></script>
+}

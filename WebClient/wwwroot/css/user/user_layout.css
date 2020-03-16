@@ -1,0 +1,140 @@
+﻿@import url("/css/admin/adconfig.css");
+
+:root {
+    --h-heght-hd: 122px;
+    --h-bg-cl-hd: #fffce0;
+    --h-height-avt: 120px;
+    --h-width-avt: 180px;
+    --h-color-hd: red;
+    --h-fs-hd-page: 20px;
+    --h-fs-hd: 30px;
+}
+
+@media only screen and (min-width:0) {
+    html, body {
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hd-main {
+        width: 100%;
+        height: var(--h-heght-hd);
+        background-color: var(--h-bg-cl-hd);
+    }
+
+    .hd-avt {
+        background-image: url(/images/admin/logo.png);
+    }
+
+    .h-f-tt {
+        width: 100%;
+    }
+
+    .h-t-page-ad {
+        color: var(--h-color-hd);
+        width: 100%;
+        font-weight: 600;
+        letter-spacing: -1px;
+    }
+
+    .h-t-namepage {
+        color: var(--h-color-hd);
+        width: 100%;
+        font-weight: bold;
+    }
+    /*------------footer---------------*/
+    .h-f-ft {
+        position: static !important;
+        width: 100%;
+        background-color: var(--h-bg-cl-hd);
+        text-align: center;
+    }
+
+    .h-t-ft {
+        width: 100%;
+        text-align: center;
+    }
+
+    .lds-ring {
+        z-index: 3;
+        display: inline-block;
+        position: absolute;
+        height: 100%;
+        background-color: rgba(51,51,51,0.3);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+        .lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 51px;
+            height: 51px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border: 6px solid #fff;
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: #fff transparent transparent transparent;
+        }
+
+            .lds-ring div:nth-child(1) {
+                animation-delay: -0.45s;
+            }
+
+            .lds-ring div:nth-child(2) {
+                animation-delay: -0.3s;
+            }
+
+            .lds-ring div:nth-child(3) {
+                animation-delay: -0.15s;
+            }
+
+    @keyframes lds-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+@media only screen and (min-width:1200px) {
+    .hd-main {
+        padding: 5px 3%;
+    }
+
+    .hd-avt {
+        height: var(--h-height-avt);
+        width: var(--h-width-avt);
+    }
+
+    .h-f-tt {
+        width: 60%;
+    }
+
+    .h-t-page-ad {
+        font-size: var(--h-fs-hd-page);
+        margin-top: 15px;
+    }
+
+    .h-t-namepage {
+        font-size: var(--h-fs-hd);
+    }
+
+    .h-f-ft {
+        padding: 10px 0;
+    }
+    /*------------footer---------------*/
+}
